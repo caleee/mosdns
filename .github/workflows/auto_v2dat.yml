@@ -1,0 +1,84 @@
+name: auto_v2dat
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build-and-unpack:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '^1.22.0'
+
+    - name: Build v2dat
+      run: |
+        set -e
+        git clone https://github.com/urlesistiana/v2dat.git
+        cd v2dat
+        go build
+        ls -l v2dat
+
+    - name: Download geoip-only-cn-private.dat and verify checksum
+      run: |
+        set -e
+        echo "Downloading geoip-only-cn-private.dat..."
+        curl --connect-timeout 5 -m 60 --ipv4 -kfSLo "geoip-only-cn-private.dat" "https://github.com/Loyalsoldier/geoip/releases/latest/download/geoip-only-cn-private.dat"
+        
+        echo "Downloading geoip-only-cn-private.dat.sha256sum..."
+        curl --connect-timeout 5 -m 10 --ipv4 -kfSLo "geoip-only-cn-private.dat.sha256sum" "https://github.com/Loyalsoldier/geoip/releases/latest/download/geoip-only-cn-private.dat.sha256sum"
+        
+        echo "Verifying checksum..."
+        sha256sum --check "geoip-only-cn-private.dat.sha256sum"
+
+    - name: Download geosite.dat and verify checksum
+      run: |
+        set -e
+        echo "Downloading geosite.dat..."
+        curl --connect-timeout 5 -m 120 --ipv4 -kfSLo "geosite.dat" "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+        
+        echo "Downloading geosite.dat.sha256sum..."
+        curl --connect-timeout 5 -m 10 --ipv4 -kfSLo "geosite.dat.sha256sum" "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat.sha256sum"
+        
+        echo "Verifying checksum..."
+        sha256sum --check "geosite.dat.sha256sum"
+
+    - name: Unpack geosite and geoip
+      run: |
+        set -e
+        ./v2dat/v2dat unpack geoip -o etc/mosdns/rule -f cn geoip-only-cn-private.dat
+        ./v2dat/v2dat unpack geosite -o etc/mosdns/rule -f cn geosite.dat
+        ./v2dat/v2dat unpack geosite -o etc/mosdns/rule -f apple geosite.dat
+        ./v2dat/v2dat unpack geosite -o etc/mosdns/rule -f 'geolocation-!cn' geosite.dat
+        ./v2dat/v2dat unpack geosite -o etc/mosdns/rule -f category-ads-all geosite.dat
+
+    - name: Set up git
+      run: |
+        set -e
+        git config user.email "${{ secrets.GIT_USER_EMAIL }}"
+        git config user.name "${{ secrets.GIT_USER_NAME }}"
+
+    - name: Commit and push
+      run: |
+        set -e
+        git add etc/mosdns/rule/
+        if ! git diff --staged --quiet etc/mosdns/rule/; then
+          git commit -m "Automated geoip/site update"
+          git push
+        else
+          echo "No changes to commit."
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,7 @@
+dns.alidns.com 223.5.5.5
+dns.alidns.com 223.6.6.6
+dns.cloudflare.com 104.16.133.229
+dns.cloudflare.com 104.16.132.229
+1dot1dot1dot1.cloudflare-dns.com 1.0.0.1
+1dot1dot1dot1.cloudflare-dns.com 1.1.1.1
+doh.apad.pro 123.129.227.26
