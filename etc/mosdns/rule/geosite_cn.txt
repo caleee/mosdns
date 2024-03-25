@@ -33,6 +33,7 @@ full:apptrailers.itunes.apple.com
 full:avail.googleflights.net
 full:b.c2r.ts.cdn.office.net
 full:bag.itunes.apple.com
+full:bbs.ztedevices.com
 full:beacons-handoff.gcp.gvt2.com
 full:beacons.gcp.gvt2.com
 full:beacons.gvt2.com
@@ -419,6 +420,7 @@ full:www.libvideo.com
 full:www.microsoft.com
 full:www.pxcc.com
 full:www.recaptcha.net
+full:www.ztedevices.com
 full:www4-static.gog-statics.com
 full:xb.dlservice.microsoft.com
 full:xn--9kr7l.com
@@ -468,8 +470,8 @@ cn
 citic
 baidu
 alipay
-jun4.com
-rankaiyx.com
+junce.com
+vidacomic.com
 0086org.com
 008gj.com
 008sport.com
@@ -4455,6 +4457,7 @@ zzzzzz.me
 51gouke.com
 51gowan.com
 51gran.com
+51grb.com
 51grfy.com
 51growup.com
 51gsl.com
@@ -7635,7 +7638,6 @@ zzzzzz.me
 9973.com
 997788.com
 998.com
-99808.com
 9981ypk.com
 9982.com
 99844666.com
@@ -8850,6 +8852,7 @@ aistar.site
 aisy.com
 aitansuo.com
 aitaxinxi.xyz
+aitcfw.com
 aite.xyz
 aitecar.com
 aitecc.com
@@ -8935,6 +8938,7 @@ aiyuangong.com
 aiyuke.com
 aiyunxiao.com
 aizaoqi.com
+aizgtc.com
 aizhan.com
 aizhanzhe.com
 aizhengli.com
@@ -9157,7 +9161,6 @@ aliunicorn.com
 aliuv.com
 alivecdn.com
 alivv.com
-alivv.net
 aliway.com
 aliwd.com
 aliwears.com
@@ -9603,7 +9606,7 @@ antutu.com
 antutu.net
 antvr.com
 antzk.com
-junlongtech.com
+anw.red
 anweishi.com
 anweizhi.com
 anwen.cc
@@ -10216,7 +10219,6 @@ astbbs.com
 astestech.com
 astfc.com
 asthis.net
-astorpiano.com
 astron.ac
 astropulsion.com
 asuidnfamun.com
@@ -19296,7 +19298,7 @@ czech-visacenter.com
 czedu.com
 czepb.com
 czfcdp.com
-junmoseo.com
+czfcw.com
 czfdc.com
 czfesco-mg.com
 czggsj.com
@@ -21460,7 +21462,6 @@ dongzhuoyao.com
 donhonet.net
 donnor.com
 donvv.com
-donzair.com
 doodoobird.com
 doofull.com
 dooioo.com
@@ -28717,6 +28718,7 @@ hangzhoufcw.com
 hangzhouluohu.com
 hangzhoutianqi114.com
 hangzhouyiyao.com
+hangzhouyq.com
 hangzhouzhiqi.com
 hangzyuyuan.com
 hanhai.net
@@ -33884,7 +33886,7 @@ info10.com
 info110.com
 info35.com
 infobidding.com
-infobigdata.com
+junmoseo.com
 infocloud.cc
 infocomm-journal.com
 infohpc.com
@@ -36339,7 +36341,7 @@ jixinbbd.com
 jixixx.com
 jixuanw.com
 jixunjsq.com
-jixunlyq.com
+junph.com
 jiyili.net
 jiyin-tech.com
 jiyin2020.com
@@ -37257,9 +37259,9 @@ jumpw.com
 jumpwgame.com
 jumpwo.com
 jun360.com
-0-6.com
+jun4.com
 junankeji.com
-junce.com
+0-6.com
 jundacheng.com
 jundaobaoan.com
 jundui.net
@@ -37278,11 +37280,11 @@ junjingsuodao.com
 junka.com
 junlee.net
 junlian.me
-anw.red
+junlongtech.com
+junmin.org
+infobigdata.com
 0086l.com
-czfcw.com
-junnanhao.com
-junph.com
+jixunlyq.com
 junpin.com
 junpin360.com
 junpinclub.com
@@ -45364,6 +45366,7 @@ narrowad.com
 naruto.red
 narutom.com
 narwal.com
+narwaltech.com
 nasack.net
 nase.tech
 nasgetinfo.com
@@ -50952,7 +50955,7 @@ rangercd.com
 rangnihaokan.com
 rangti.com
 ranhou.com
-junmin.org
+rankaiyx.com
 rankingonline.jp
 ranknowcn.com
 ranling.com
@@ -51144,6 +51147,7 @@ redidc.com
 redisbook.com
 redisfans.com
 redisguide.com
+redmagic.com
 rednetdns.com
 redocn.com
 redoop.com
@@ -55426,7 +55430,6 @@ somdom.com
 someabcd.com
 somenchina.com
 someonegao.com
-somepen.com
 something8.com
 sometracking.com
 somo.so
@@ -61203,7 +61206,7 @@ vicsdf.com
 victory-inflight.com
 viczz.com
 vida-bio.com
-vidacomic.com
+junnanhao.com
 vidarsoft.com
 viday.org
 videaba.com
@@ -64038,7 +64041,6 @@ wosigndoc.com
 woskj2.com
 woso100.com
 wotangka.com
-wotobang.com
 wotrus.com
 wotucdn.com
 wotula.com
@@ -64225,6 +64227,7 @@ wsoversea.info
 wsq.cool
 wsqejt.com
 wss.ink
+wss.zone
 wsssec.com
 wstong.com
 wstx.com
@@ -64569,7 +64572,6 @@ wwwic.net
 zxinzxw.com
 zxinc.org
 wwwwww.vip
-wwz8.com
 wx-api.net
 wx-data.com
 wx-youyan.net
@@ -64800,7 +64802,6 @@ x1997.net
 x23118.com
 x23119.com
 x23qb.com
-x23us.me
 x23us.us
 x23wxw.com
 x2image.com
@@ -71574,6 +71575,7 @@ zgxqwqh.com
 zgxrjy.com
 zgxsczdldak.com
 zgxue.com
+zgxytc.com
 zgxyzx.net
 zgxzcj.com
 zgxzhjx.com
@@ -71600,6 +71602,7 @@ zgzjzzs.com
 zgzkw.com
 zgznh.com
 zgzpsjz.com
+zgzsa.com
 zgzsrc.com
 zgzwl.com
 zgzy.net
@@ -72398,6 +72401,7 @@ zhongzhilin.com
 zhongzhixin.com
 zhongzhoutm.com
 zhongzilu.com
+zhonshian.com
 zhonzhuan.com
 zhopera.com
 zhou.icu
@@ -73065,6 +73069,7 @@ zjzj.org
 zjzjhotel.com
 zjznk.com
 zjzs.net
+zjzsa.com
 zjzsxb.com
 zjzydns.com
 zk100.com
@@ -73533,6 +73538,7 @@ zte.net
 ztedevice.com
 ztedevices.com
 ztedu8.com
+ztemall.com
 ztemap.com
 ztems.com
 ztestin.com
