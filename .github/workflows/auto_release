@@ -1,0 +1,51 @@
+name: auto_release
+
+on:
+  schedule:
+    - cron:  '0 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  release-and-tag:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
+
+    - name: Get last two commits
+      run: |
+        echo "CURRENT_COMMIT=$(git rev-parse HEAD)" >> $GITHUB_ENV
+        echo "PREVIOUS_COMMIT=$(git rev-parse HEAD^)" >> $GITHUB_ENV
+
+    - name: Check for changes in the etc directory
+      run: |
+        if git diff --name-only ${{ env.PREVIOUS_COMMIT }} ${{ env.CURRENT_COMMIT }} -- etc/ | grep -q 'etc/'
+        then
+          echo "CHANGES_FOUND=true" >> $GITHUB_ENV
+        else
+          echo "CHANGES_FOUND=false" >> $GITHUB_ENV
+        fi
+
+    - name: Archive etc directory
+      if: env.CHANGES_FOUND == 'true'
+      run: |
+        tar -czvf "mosdns_config_$(date +'%Y%m%d').tar.gz" etc/
+
+    - name: Get the date
+      run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_ENV
+
+    - name: Create Release and Upload Asset
+      id: create_release
+      if: env.CHANGES_FOUND == 'true'
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: v${{ env.date }}
+        name: v${{ env.date }}
+        body: "Package etc directory on date ${{ env.date }}"
+        files: |
+          ./mosdns_config_${{ env.date }}.tar.gz
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
