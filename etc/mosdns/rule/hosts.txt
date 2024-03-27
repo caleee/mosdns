@@ -1,7 +1,35 @@
+# alidns
 dns.alidns.com 223.5.5.5
 dns.alidns.com 223.6.6.6
+
+# dnspod
+doh.pub 1.12.12.12
+doh.pub 120.53.53.53
+dot.pub 1.12.12.12
+dot.pub 120.53.53.53
+
+# cloudflare
+cloudflare-dns.com 104.16.249.249
+cloudflare-dns.com 104.16.248.249
 dns.cloudflare.com 104.16.133.229
 dns.cloudflare.com 104.16.132.229
 1dot1dot1dot1.cloudflare-dns.com 1.0.0.1
 1dot1dot1dot1.cloudflare-dns.com 1.1.1.1
-doh.apad.pro 123.129.227.26
+
+# google
+dns.google.com 8.8.4.4
+dns.google.com 8.8.8.8
+dns.google 8.8.4.4
+dns.google 8.8.8.8
+
+# nextdns
+dns.nextdns.io 45.11.104.186
+dns.nextdns.io 37.252.249.233
+test.nextdns.io 45.11.104.186
+test.nextdns.io 37.252.249.233
+
+# adguard
+dns.adguard-dns.com 94.140.15.15
+dns.adguard-dns.com 94.140.14.14
+family.adguard-dns.com 94.140.14.15
+family.adguard-dns.com 94.140.15.16
