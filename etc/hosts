@@ -1,0 +1,39 @@
+# localhost
+127.0.0.1   localhost
+::1         localhost
+
+# alidns
+223.5.5.5 dns.alidns.com
+223.6.6.6 dns.alidns.com
+
+# dnspod
+1.12.12.12 doh.pub
+120.53.53.53 doh.pub
+1.12.12.12 dot.pub
+120.53.53.53 dot.pub
+
+# cloudflare
+104.16.249.249 cloudflare-dns.com
+104.16.248.249 cloudflare-dns.com
+104.16.133.229 dns.cloudflare.com
+104.16.132.229 dns.cloudflare.com
+1.0.0.1 1dot1dot1dot1.cloudflare-dns.com
+1.1.1.1 1dot1dot1dot1.cloudflare-dns.com
+
+# google
+8.8.4.4 dns.google.com
+8.8.8.8 dns.google.com
+8.8.4.4 dns.google
+8.8.8.8 dns.google
+
+# nextdns
+45.11.104.186 dns.nextdns.io
+37.252.249.233 dns.nextdns.io
+45.11.104.186 test.nextdns.io
+37.252.249.233 test.nextdns.io
+
+# adguard
+94.140.15.15 dns.adguard-dns.com
+94.140.14.14 dns.adguard-dns.com
+94.140.14.15 family.adguard-dns.com
+94.140.15.16 family.adguard-dns.com
