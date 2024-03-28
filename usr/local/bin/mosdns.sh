@@ -86,7 +86,7 @@ update() {
     fi
 
     if ! curl --connect-timeout 5 -m 60 --ipv4 -kfSLo "$url"; then
-        log "ERROR" "curl --connect-timeout 5 -m 60 --ipv4 -kfSLo $url" "Download failed"
+        log "ERROR" "curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO $url" "Download failed"
         return 1
     fi
 
