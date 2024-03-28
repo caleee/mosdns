@@ -85,12 +85,12 @@ update() {
         return 1
     fi
 
-    local file=$(basename "$url")
-    if ! curl -sLO "$url" --max-time 60; then
-        log "ERROR" "curl -LO $url --max-time 60" "Download failed"
+    if ! curl --connect-timeout 5 -m 60 --ipv4 -kfSLo "$url"; then
+        log "ERROR" "curl --connect-timeout 5 -m 60 --ipv4 -kfSLo $url" "Download failed"
         return 1
     fi
 
+    local file=$(basename "$url")
     if ! tar xzf "$file" -C /; then
         log "ERROR" "tar xzf $file -C /" "Unpacking failed"
         return 1
