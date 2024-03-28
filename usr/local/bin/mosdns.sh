@@ -43,17 +43,6 @@ check() {
 }
 
 backup() {
-    mkdir -p "${MOSDNS_DIR}"
-    mkdir -p "${BACKUP_DIR}"
-    local date=$(date '+%Y%m%d')
-    local backup_file="mosdns_${date}.tar.gz"
-    tar czf "${BACKUP_DIR}/${backup_file}" -C "${MOSDNS_DIR}" .
-    log "INFO" "tar czf ${BACKUP_DIR}/${backup_file}" "Backup successful"
-
-    # Keep only the latest 3 backups
-    (cd "${BACKUP_DIR}" && ls -t | tail -n +4 | xargs -r rm --)
-}
-backup() {
     local mosdns_files=("config_custom.yaml" "config_sample.yaml" "config.yaml" "default.yaml" "rule/blocklist.txt" "rule/cloudflare-cidr.txt" "rule/ddnslist.txt" "rule/disable-ads.txt" "rule/geoip-only-cn-private_cn.txt" "rule/geosite_apple.txt" "rule/geosite_category-ads-all.txt" "rule/geosite_cn.txt" "rule/geosite_geolocation-!cn.txt" "rule/greylist.txt" "rule/hosts.txt" "rule/local-ptr.txt" "rule/redirect.txt" "rule/whitelist.txt")
     mkdir -p "${MOSDNS_DIR}"
     mkdir -p "${BACKUP_DIR}"
@@ -85,7 +74,7 @@ update() {
         return 1
     fi
 
-    if ! curl --connect-timeout 5 -m 60 --ipv4 -kfSLo "$url"; then
+    if ! curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "$url"; then
         log "ERROR" "curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO $url" "Download failed"
         return 1
     fi
