@@ -1699,10 +1699,6 @@ full:www.apple.com.edgekey.net
 full:www.apple.com
 full:xp.apple.com
 full:testflight.apple.com
-api-adservices.apple.com
-iadsdk.apple.com
-iad.apple.com
-qwapi.com
 researchkit.cn
 researchkit.com.cn
 swiftui.cn
@@ -1735,3 +1731,7 @@ itunesradio.cn
 itunesradio.com.cn
 swiftui.cn
 swiftui.com.cn
+api-adservices.apple.com
+iadsdk.apple.com
+iad.apple.com
+qwapi.com
