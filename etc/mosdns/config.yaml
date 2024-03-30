@@ -1,5 +1,5 @@
 api:
-    http: 0.0.0.0:8080
+    http: 0.0.0.0:9090
 include: []
 log:
     file: /var/log/mosdns.log
@@ -85,13 +85,12 @@ plugins:
     - args:
         concurrent: 2
         upstreams:
-            - addr: https://dns.alidns.com/dns-query
+            - addr: https://223.5.5.5/dns-query
               bootstrap: 127.0.0.1
-              enable_http3: true
               enable_pipeline: true
               idle_timeout: 30
               insecure_skip_verify: false
-            - addr: quic://dns.alidns.com
+            - addr: https://223.6.6.6/dns-query
               bootstrap: 127.0.0.1
               enable_pipeline: true
               idle_timeout: 30
@@ -101,15 +100,13 @@ plugins:
     - args:
         concurrent: 2
         upstreams:
-            - addr: https://dns.cloudflare.com/dns-query
+            - addr: https://1.1.1.1/dns-query
               bootstrap: 127.0.0.1
-              enable_http3: true
               enable_pipeline: true
               idle_timeout: 30
               insecure_skip_verify: false
-            - addr: https://1dot1dot1dot1.cloudflare-dns.com/dns-query
+            - addr: https://1.0.0.1/dns-query
               bootstrap: 127.0.0.1
-              enable_http3: true
               enable_pipeline: true
               idle_timeout: 30
               insecure_skip_verify: false
