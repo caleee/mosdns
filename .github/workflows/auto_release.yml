@@ -15,23 +15,13 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Get the date
-        run: echo "DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
-
-      - name: Archive etc directory
-        run: tar -czvf "mosdns_config_${{ env.DATE }}.tar.gz" etc/
-
-      - name: Calculate sha256 of new tarball
-        id: sha_new_tarball
-        run: echo "NEW_TARBALL_HASH=$(sha256sum mosdns_config_${{ env.DATE }}.tar.gz | awk '{print $1}')" >> $GITHUB_ENV
-
       - name: Download and rename latest release asset
         id: download_latest_asset
         run: |
-          LATEST_ASSET_URL=$(gh release list --limit 1 | cut -f4)
-          if [ -n "$LATEST_ASSET_URL" ]; then
-            curl -sL "$LATEST_ASSET_URL" -o mosdns_config_latest.tar.gz
-          fi
+          gh release download --pattern "mosdns_config_*.tar.gz" --dir .
+          mv mosdns_config_*.tar.gz mosdns_config_latest.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Calculate sha256 of latest tarball
         id: sha_latest_tarball
@@ -41,6 +31,16 @@ jobs:
           else
             echo "LATEST_TARBALL_HASH=" >> $GITHUB_ENV
           fi
+
+      - name: Get the date
+        run: echo "DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
+
+      - name: Archive etc directory
+        run: tar -czvf "mosdns_config_${{ env.DATE }}.tar.gz" etc/
+
+      - name: Calculate sha256 of new tarball
+        id: sha_new_tarball
+        run: echo "NEW_TARBALL_HASH=$(sha256sum mosdns_config_${{ env.DATE }}.tar.gz | awk '{print $1}')" >> $GITHUB_ENV
 
       - name: Check if tarballs are different
         run: |
