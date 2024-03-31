@@ -1,4 +1,3 @@
-api: []
 include: []
 log:
     file: /var/log/mosdns.log
