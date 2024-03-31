@@ -36,7 +36,7 @@ jobs:
         run: echo "DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
 
       - name: Archive etc directory
-        run: tar -czvf "mosdns_config_${{ env.DATE }}.tar.gz" etc/
+        run: git archive -o "mosdns_config_${{ env.DATE }}.tar.gz" HEAD etc/
 
       - name: Calculate sha256 of new tarball
         id: sha_new_tarball
