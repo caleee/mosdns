@@ -382,7 +382,6 @@ full:tac.googleapis.com
 full:tesla-cdn.thron.cn
 full:test.bugs-qa.chromium.org
 full:test.gbugs-qa.chromium.org
-full:testflight.apple.com
 full:tools.google.com
 full:tools.l.google.com
 full:up.corp.goog
