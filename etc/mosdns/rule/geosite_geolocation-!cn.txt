@@ -529,8 +529,8 @@ aws
 apple
 and
 amazon
-jburl.top
-pricelesspick.com
+jbtalks.my
+silverchair-cdn.com
 141jj.com
 141tube.com
 159i.com
@@ -2190,7 +2190,7 @@ zbporn.com
 zb.live
 appledaily.hk
 appledarwin.com
-appledarwin.net
+jfengtime.com
 appleenews.com
 appleexpo.eu
 appleexpo.info
@@ -5442,7 +5442,7 @@ cloudflare-dns.com
 cloudflare-ech.com
 cloudflare-esni.com
 cloudflare-gateway.com
-cloudflare-ipfs.com
+jfqu37.xyz
 cloudflare-quic.com
 cloudflare.com
 cloudflare.net
@@ -7402,6 +7402,7 @@ episcopalchurch.org
 episodic.com
 epoch.cloud
 xxxhentaipics.pro
+epochbase.com
 epochbuy.com
 epochcar.com
 epochhk.com
@@ -10351,7 +10352,7 @@ hentaiz.mobi
 hentaiz.vip
 hentaizap.com
 hentaizilla.com
-jfqu36.club
+hentaizz.net
 henti-night.com
 heptio.com
 heqinglian.net
@@ -12299,8 +12300,8 @@ jb22.lol
 jbe-platform.com
 jbtalks.cc
 jbtalks.com
-jbtalks.my
 000webhost.com
+jburl.top
 jcpenney.com
 jdav-css.shop
 jdavsp.asia
@@ -12334,10 +12335,10 @@ jetfuelapp.com
 jetfuelapps.com
 jetos.com
 jex.com
-jfengtime.com
-hentaizz.net
+appledarwin.net
 141jav.com
-ogaoga.org
+cloudflare-ipfs.com
+jfrog.com
 jfrog.org
 jgg18.xyz
 jgoodies.com
@@ -15879,7 +15880,7 @@ offresspecialesbmw.ca
 offrezdesipods.com
 ofile.org
 ogameblog.com
-jfrog.com
+ogaoga.org
 ogate.org
 ogp.me
 ohentai.org
@@ -17364,7 +17365,7 @@ pricelessbeijing.com
 pricelesshongkong.com
 pricelesshonolulu.com
 pricelessmarketingengine.com
-jfqu37.xyz
+pricelesspick.com
 pricelesssantiago.com
 pricelesssurprises.com
 pricelesssydney.com
@@ -18900,7 +18901,7 @@ sijihuisuo.com
 sikiswap.com
 silkbook.com
 silkengirl.com
-silverchair-cdn.com
+jfqu36.club
 silversluts.com
 simbolostwitter.com
 simcity-buildit.com
@@ -24288,15 +24289,9 @@ regexp:.+\.ap-mumbai\.tencentcos\.(cn|com(\.cn)?)$
 regexp:.+\.ap-seoul\.tencentcos\.(cn|com(\.cn)?)$
 regexp:.+\.ap-singapore\.tencentcos\.(cn|com(\.cn)?)$
 regexp:.+\.ap-tokyo\.tencentcos\.(cn|com(\.cn)?)$
-regexp:.+\.awsdns-cn-[0-9][0-9]\.biz$
-regexp:.+\.awsdns-cn-[0-9][0-9]\.com$
-regexp:.+\.awsdns-cn-[0-9][0-9]\.net$
-regexp:.+\.awsdns-cn-[0-9][0-9]\.top$
+regexp:.+\.awsdns-cn-[0-9][0-9]\.(biz|com|net|top)$
 regexp:.+\.awsdns-cn-[0-9][a-e0-9]\.cn$
-regexp:.+\.awsdns-[0-9][0-9]\.com$
-regexp:.+\.awsdns-[0-9][0-9]\.co\.uk$
-regexp:.+\.awsdns-[0-9][0-9]\.net$
-regexp:.+\.awsdns-[0-9][0-9]\.org$
+regexp:.+\.awsdns-[0-9][0-9]\.(co\.uk|com|net|org)$
 regexp:.+\.dkr\.ecr\.[^\.]+\.amazonaws\.com$
 regexp:.+\.eu-frankfurt\.tencentcos\.(cn|com(\.cn)?)$
 regexp:.+\.eu-moscow\.tencentcos\.(cn|com(\.cn)?)$
