@@ -8,10 +8,10 @@
 # Usage: Run this script as root: ./mosdns.sh
 # Note: Ensure that you understand every command's behaviour and be careful when identifying large files
 #
-# For crontab: 0 3 * * * /usr/local/bin/mosdns.sh >> /var/log/consumer-script.log 2>&1
+# For crontab: 0 3 * * * /usr/local/bin/mosdns.sh >> /var/log/consumer-mosdns-script.log 2>&1
 #
 
-LOG_FILE="/var/log/consumer-script.log"
+LOG_FILE="/var/log/consumer-mosdns-script.log"
 MOSDNS_DIR="/etc/mosdns"
 BACKUP_DIR="/opt/backup/mosdns"
 
