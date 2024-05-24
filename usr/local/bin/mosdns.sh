@@ -2,8 +2,8 @@
 #
 # Filename: mosdns.sh
 # Author: Cao Lei <caolei@mail.com>
-# Date: 2024/03/28
-# Version: 1.0.0
+# Date: 2024/03/28 - 2024/05/23
+# Version: 1.0.1
 # Description: This script is used to initialize and update mosdns configuration and data
 # Usage: Run this script as root: ./mosdns.sh
 # Note: Ensure that you understand every command's behaviour and be careful when identifying large files
@@ -16,13 +16,16 @@ MOSDNS_DIR="/etc/mosdns"
 BACKUP_DIR="/opt/backup/mosdns"
 
 log() {
-    local status=$1
-    local cmd=$2
-    local message=$3
-    local datetime=$(date '+%Y-%m-%dT%H:%M:%S.%6N%:z')
-    local script_name=$(basename "$0")
-    local user=$(whoami)
-    echo "${datetime} ${status} ${script_name} (${user}) CMD (${cmd}) MSG (${message})" >> "${LOG_FILE}"
+    local status cmd message datetime script_name user
+
+    status="$1"
+    cmd="$2"
+    message="$3"
+    datetime=$(date '+%Y-%m-%dT%H:%M:%S.%6N%:z')
+    script_name=$(basename "$0")
+    user=$(whoami)
+
+    echo "${datetime} ${status} ${script_name} (${user}) CMD (${cmd}) MSG (${message})" >>"${LOG_FILE}"
 }
 
 check() {
@@ -43,15 +46,18 @@ check() {
 }
 
 backup() {
-    local mosdns_files=("config_custom.yaml" "config_sample.yaml" "config.yaml" "default.yaml" "rule/blocklist.txt" "rule/cloudflare-cidr.txt" "rule/ddnslist.txt" "rule/disable-ads.txt" "rule/geoip-only-cn-private_cn.txt" "rule/geosite_apple.txt" "rule/geosite_category-ads-all.txt" "rule/geosite_cn.txt" "rule/geosite_geolocation-!cn.txt" "rule/greylist.txt" "rule/hosts.txt" "rule/local-ptr.txt" "rule/redirect.txt" "rule/whitelist.txt")
+    local mosdns_files date backup_file temp_backup_dir dir_to_create
+
+    mosdns_files=("config_custom.yaml" "config_sample.yaml" "config.yaml" "default.yaml" "rule/blocklist.txt" "rule/cloudflare-cidr.txt" "rule/ddnslist.txt" "rule/disable-ads.txt" "rule/geoip-only-cn-private_cn.txt" "rule/geosite_apple.txt" "rule/geosite_category-ads-all.txt" "rule/geosite_cn.txt" "rule/geosite_geolocation-!cn.txt" "rule/greylist.txt" "rule/hosts.txt" "rule/local-ptr.txt" "rule/redirect.txt" "rule/whitelist.txt")
+    date=$(date '+%Y%m%d')
+    backup_file="mosdns_${date}.tar.gz"
+    temp_backup_dir=$(mktemp -d)
+
     mkdir -p "${MOSDNS_DIR}"
     mkdir -p "${BACKUP_DIR}"
-    local date=$(date '+%Y%m%d')
-    local backup_file="mosdns_${date}.tar.gz"
 
-    local temp_backup_dir=$(mktemp -d)
     for file in "${mosdns_files[@]}"; do
-        local dir_to_create=$(dirname "${temp_backup_dir}/mosdns/${file}")
+        dir_to_create=$(dirname "${temp_backup_dir}/mosdns/${file}")
         mkdir -p "${dir_to_create}"
         cp "${MOSDNS_DIR}/${file}" "${dir_to_create}/"
     done
@@ -66,9 +72,13 @@ backup() {
 }
 
 update() {
-    local TMP_DIR=$(mktemp -d)
-    pushd "${TMP_DIR}" >/dev/null
-    local url=$(curl -s https://api.github.com/repos/caleee/mosdns/releases/latest | grep -o "https://github.com/caleee/mosdns/releases/download/v.*.tar.gz")
+    local TMP_DIR url file
+
+    TMP_DIR=$(mktemp -d)
+
+    pushd "${TMP_DIR}" >/dev/null || exit 1
+
+    url=$(curl -s https://api.github.com/repos/caleee/mosdns/releases/latest | grep -o "https://github.com/caleee/mosdns/releases/download/v.*.tar.gz")
     if [ -z "$url" ]; then
         log "ERROR" "curl -s https://api.github.com/repos/caleee/mosdns/releases/latest" "No download URL found"
         return 1
@@ -79,12 +89,15 @@ update() {
         return 1
     fi
 
-    local file=$(basename "$url")
+    file=$(basename "$url")
+
     if ! tar xzf "$file" -C /; then
         log "ERROR" "tar xzf $file -C /" "Unpacking failed"
         return 1
     fi
-    popd >/dev/null
+
+    popd >/dev/null || exit 1
+
     rm -rf "${TMP_DIR}"
 
     if ! systemctl restart mosdns; then
@@ -95,7 +108,10 @@ update() {
 }
 
 restore() {
-    local backup_file=$(ls -t "${BACKUP_DIR}"/mosdns_*.tar.gz | head -1)
+    local backup_file
+
+    backup_file=$(ls -t "${BACKUP_DIR}"/mosdns_*.tar.gz | head -1)
+
     if [ -z "$backup_file" ]; then
         log "ERROR" "ls -t ${BACKUP_DIR}/mosdns_*.tar.gz" "No backup file found to restore"
         return 1
@@ -105,6 +121,7 @@ restore() {
         log "ERROR" "tar xzf $backup_file -C ${MOSDNS_DIR}" "Restore failed"
         return 1
     fi
+
     log "INFO" "tar xzf $backup_file -C ${MOSDNS_DIR}" "Restore successful"
 }
 
@@ -123,21 +140,21 @@ if [ $# -eq 0 ]; then
     main
 else
     case "$1" in
-        check)
-            check
-            ;;
-        backup)
-            backup
-            ;;
-        update)
-            update
-            ;;
-        restore)
-            restore
-            ;;
-        *)
-            echo "Usage: $0 {check|backup|update|restore}"
-            exit 1
-            ;;
+    check)
+        check
+        ;;
+    backup)
+        backup
+        ;;
+    update)
+        update
+        ;;
+    restore)
+        restore
+        ;;
+    *)
+        echo "Usage: $0 {check|backup|update|restore}"
+        exit 1
+        ;;
     esac
 fi
