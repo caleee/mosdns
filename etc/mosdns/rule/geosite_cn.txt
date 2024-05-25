@@ -522,8 +522,8 @@ cn
 citic
 baidu
 alipay
-junshizhanlue.com
-dnfziliao.com
+junsw.com
+panxsoft.com
 007szx.com
 007zhibo.cc
 00817.com
@@ -3688,7 +3688,6 @@ zzzzzz.me
 389j.com
 38blog.com
 38ejed.com
-38fan.com
 38hack.com
 38hot.net
 38hp.com
@@ -15596,7 +15595,7 @@ chengsmart.com
 chengtu.com
 chenguangblog.com
 chengwei.com
-chengxiangqian.com
+jupup.com
 chengxiaobai.com
 chengxinyouxuan.com
 chengxuan.com
@@ -21362,7 +21361,7 @@ dnbbs.com
 dnbiz.com
 dncable.com
 dncheng.com
-juqi.com
+dnfziliao.com
 dngswin7.com
 dngsxitong.com
 dngz.net
@@ -23924,6 +23923,8 @@ evv1.com
 evzhidao.com
 ew-wirestripping.com
 ew52.com
+ew80.com
+ew80yun.com
 ew9z.com
 ewaga.com
 ewang.com
@@ -31787,7 +31788,7 @@ htjsq.com
 htkaoyan.com
 htknow.com
 htky365.com
-jupiterlauncher.com
+html51.com
 html5code.net
 html5dw.com
 html5plus.org
@@ -37878,8 +37879,8 @@ junshijia.com
 junshis.com
 junshishu.com
 junshitt.com
+junshizhanlue.com
 0-6.com
-junsw.com
 junsz.com
 juntongtian.com
 juntu.com
@@ -37898,10 +37899,10 @@ junzimen.com
 junziqian.com
 junziyize.com
 juooo.com
-html51.com
-zyz119.com
+jupiterlauncher.com
+chengxiangqian.com
 007swz.com
-juqingjuqing.com
+luffy.cc
 juqingla.com
 juqingw.com
 juqk.net
@@ -38563,7 +38564,7 @@ kaogua.com
 kaojionline.com
 kaojuan.com
 kaola.com
-zyyo.net
+zyz119.com
 kaola100.com
 kaolacdn.com
 kaolafm.com
@@ -38971,7 +38972,7 @@ kingcheergame.com
 kingclouddns.com
 kingdee-soft.com
 kingdee.com
-zyylee.com
+zyyo.net
 kingdee.org
 kingdeemall.com
 kingdeestar.com
@@ -39408,7 +39409,7 @@ ks321.com
 ks365.org
 ks51.com
 ks5u.com
-zyyimin.com
+zyylee.com
 ksapisrv.com
 ksbao.cc
 ksbao.com
@@ -39719,7 +39720,7 @@ kunenaspanish.com
 kungfucloud.com
 kungfuenglish.com
 kunguankeji.com
-zyyfy.com
+zyyimin.com
 kunkkawu.com
 kunkunyu.com
 kunlun-cdn.com
@@ -40247,7 +40248,6 @@ lanzoux.com
 lanzouy.com
 lanzov.com
 lanzun.net
-lanzv.com
 laobaigan-hs.com
 laobandq.com
 laobanfa.com
@@ -40404,11 +40404,11 @@ layoutad.com
 laysky.com
 layui.com
 layuicdn.com
+zyyfy.com
 zyxzyyy.com
-zyxyfy.com
 lazada.com
+zyxyfy.com
 zyxuan.org
-zyxr.com
 lazada.sg
 lazada.vn
 lazcdn.com
@@ -40574,7 +40574,7 @@ leaping.games
 leapmie.com
 leapmotor.com
 learn-quantum.com
-zywxpress.com
+zyxr.com
 learndiary.com
 learnfans.com
 learnfk.com
@@ -40648,7 +40648,7 @@ leftso.com
 lefuzuwu.com
 legendsec.com
 legendtkl.com
-zywtc.com
+zywxpress.com
 legou456.com
 legowechat.com
 legu.cc
@@ -40772,7 +40772,7 @@ lenosoft.net
 lenovator.com
 lenovo-ibm.com
 lenovo.com
-zywjw.com
+zywtc.com
 lenovo.net
 lenovocloudos.com
 lenovoeservice.com
@@ -40882,7 +40882,7 @@ lewenba.cc
 lewenn.com
 lewenxsw.com
 lewifi.com
-zyun.vip
+zywjw.com
 lexar.com
 lexiang-asset.com
 lexiangla.com
@@ -40891,7 +40891,7 @@ lexin.com
 lexinchina.com
 lexpq.com
 lexs9.com
-zyue.vip
+zyun.vip
 lexue.com
 lexueying.com
 lexun.com
@@ -41102,7 +41102,7 @@ liao98.com
 liaobagua.com
 liaocheng.cc
 liaochuo.com
-zyue.com
+zyue.vip
 liaogu.com
 liaogx.com
 liaojieju.com
@@ -42500,7 +42500,7 @@ lufangjia.com
 lufax.com
 lufaxcdn.com
 lufengzhe.com
-luffy.cc
+juqingjuqing.com
 luffycity.com
 lufunds.com
 lugangsoft.com
@@ -42682,7 +42682,7 @@ lvlian5.com
 lvluowang.com
 lvlvlvyou.com
 lvmae.com
-zyucan.com
+zyue.com
 lvmama.com
 lvmifo.com
 lvmotou.com
@@ -42714,7 +42714,7 @@ lvwang.com
 lvwenhan.com
 lvwmb.com
 lvxing.net
-zytv.cc
+zyucan.com
 lvye.com
 lvye.org
 lvyestudy.com
@@ -42763,12 +42763,12 @@ lwurl.to
 lwxgds.com
 lwxs9.com
 lwxstxt.com
-zytuozhan.com
+zytv.cc
 lx.pub
 lx.run
 lx138.com
 lx167.com
-zyt8.com
+zytuozhan.com
 lx598.com
 lxapk.com
 lxbbt.com
@@ -42977,7 +42977,7 @@ lzzyad.com
 m-finder.com
 m-rainbow.com
 m.biz
-zystarlink.com
+zyt8.com
 m0.hk
 m1.run
 m1315.com
@@ -43023,7 +43023,7 @@ mac189.com
 mac69.com
 mac89.com
 macabc.com
-zys6d.com
+zystarlink.com
 macapp.so
 macapp8.com
 macappbox.com
@@ -43642,10 +43642,10 @@ mbinary.xyz
 mblaudio.com
 mbldbb.com
 mbokee.com
-zys.me
+zys6d.com
 mbsifu.com
 mbsky.com
-zyrykbiandao.com
+zys.me
 mbtxtt.cc
 mbwxzx.hk
 mbxt.net
@@ -43707,7 +43707,7 @@ mcx666.com
 mcxzs.com
 mcyhfl.com
 mczyz.com
-zyrmw.com
+zyrykbiandao.com
 md5ma.com
 mdbimg.com
 mdckj.com
@@ -43996,7 +43996,7 @@ meizhou.com
 meizhou.net
 meizitu.net
 meizu.com
-zyrj.org
+zyrmw.com
 meizu.net
 mejorrelojes.com
 meke8.com
@@ -44168,7 +44168,7 @@ mgmovie.net
 mgmusic.vip
 mgogo.com
 mgongkong.com
-zyrb.com
+zyrj.org
 mgpyh.com
 mgsdk.com
 mgslb.com
@@ -44344,7 +44344,7 @@ midainc.com
 midasbuy.com
 midea-buy.com
 midea.com
-zyqzyyy.com
+zyrb.com
 mideadc.com
 midicn.com
 midifan.com
@@ -45205,7 +45205,7 @@ motieimg.com
 motilive.com
 motimaster.com
 motisky.com
-zyqjs.com
+zyqzyyy.com
 moto8.com
 motooy.com
 motowoo.com
@@ -45284,9 +45284,9 @@ mplife.com
 mpll.cc
 mplus.tech
 mpmqoj.com
+zyqjs.com
 zyqjg.com
 zyqc.cc
-zyq366.com
 mpoa.vip
 mpopkart.com
 mpos.ren
@@ -45343,7 +45343,7 @@ mschcdn.com
 mscodecloud.com
 mscto.com
 msddp.com
-jupup.com
+zyq366.com
 msdn.hk
 msdn.im
 zyq.today
@@ -45749,6 +45749,7 @@ myhard.com
 myhayo.com
 myhexin.com
 myhithink.com
+myhl-china315.com
 myhomeok.com
 myhongzuan.com
 myhostadmin.net
@@ -48412,7 +48413,7 @@ pantuitui.com
 pantum.com
 panwan.net
 panweizeng.com
-panxsoft.com
+juqi.com
 panyiyun.com
 panyouwl.com
 panyun.com
@@ -52393,6 +52394,7 @@ rmzxb.com
 rn-hswh.com
 rneok.com
 rnfengwo.com
+rngmoe.com
 rngtest.com
 rnhqxh.com
 rnhy.net
@@ -57992,6 +57994,7 @@ szlddb.com
 szldzb.com
 szledia.org
 szleezen.com
+szlgzxyy.com
 szlhtram.com
 szlianya.net
 szlightlink.com
@@ -60622,7 +60625,6 @@ tuer123.com
 tugou.com
 tugoucx.com
 tuguaishou.com
-tuhaihe.com
 tuhaokuai.com
 tuhu.com
 tuhu.org
@@ -66341,6 +66343,7 @@ xhscdn.com
 xhscdn.net
 xhsd.com
 xhslink.com
+xhslw.com
 xhsyqx.com
 xhsyww.com
 zxopen.com
@@ -74163,7 +74166,6 @@ zjpost.com
 zjptcc.com
 zjpubservice.com
 zjqbj.com
-zjqcwx.com
 zjqichuang.com
 zjrc.com
 zjrc.net
@@ -75109,23 +75111,24 @@ cdn.jetbrains.com
 cdn.samsung.com
 china.mintel.com
 chinatelecom.com.hk
+chinatelecom.com.mo
 moto-one.com.hk
 midea.com.tr
 mgplay.com.tw
 meizu.com.hk
 md-store.com.tw
-chinatelecom.com.mo
 chinaunicom.com.hk
+citics.com.hk
 macaotourism.gov.mo
 m.travelzoo.com
-citics.com.hk
 cmbi.com.hk
+cn.bing.com
 lvyahoo.com.tw
 lvmall.com.tw
 liaode.com.tw
-cn.bing.com
 cn.bing.net
 cn.msi.com
+cn.windowssearch.com
 legion.com.hk
 learn.microsoft.com
 lazada.com.ph
@@ -75136,7 +75139,6 @@ kunhao.com.sg
 ksair.com.tw
 kingdee.com.tw
 kaola.com.hk
-cn.windowssearch.com
 jd.co.th
 cncc.bingj.com
 cnimg.elex.com
@@ -75224,21 +75226,21 @@ ares.dl.playstation.net
 poseidon.dl.playstation.net
 bj1.api.bing.com
 cdn.shanghai.nyu.edu
-lx3.cok.elexapp.com
-cn.pool.ntp.org
 cloud-neofussvr.sslcs.cdngc.net
+cn.pool.ntp.org
+lx3.cok.elexapp.com
 cn.mm.bing.net
 msdprod-ad.download.prss.microsoft.com
 p.cdn.persaas.dell.com
 lex.download.prss.microsoft.com
 lenovo.com.cdn.cloudflare.net
-msdn.download.prss.microsoft.com
 mbs.download.prss.microsoft.com
 mbsuat.download.prss.microsoft.com
 mpnbenefits.download.prss.microsoft.com
 mpnbenefitsrtl.download.prss.microsoft.com
-itacademyuat.download.prss.microsoft.com
 mpnbenefitsrtluat.download.prss.microsoft.com
+itacademyuat.download.prss.microsoft.com
+msdn.download.prss.microsoft.com
 surface.download.prss.microsoft.com
 msproduct.download.prss.microsoft.com
 msproductuat.download.prss.microsoft.com
