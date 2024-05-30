@@ -1724,6 +1724,14 @@ full:www.apple.com.edgekey.net.globalredir.akadns.net
 full:www.apple.com.edgekey.net
 full:www.apple.com
 full:xp.apple.com
+full:certs-lb.apple.com.akadns.net
+full:certs.apple.com
+full:crl-lb.apple.com.akadns.net
+full:crl.apple.com
+full:ocsp-lb.apple.com.akadns.net
+full:ocsp.apple.com
+full:ocsp2-lb.apple.com.akadns.net
+full:ocsp2.apple.com
 beats1.cn
 beats1.com.cn
 beats2.com.cn
@@ -1752,11 +1760,3 @@ researchkit.cn
 researchkit.com.cn
 swiftui.cn
 swiftui.com.cn
-full:certs-lb.apple.com.akadns.net
-full:certs.apple.com
-full:crl-lb.apple.com.akadns.net
-full:crl.apple.com
-full:ocsp-lb.apple.com.akadns.net
-full:ocsp.apple.com
-full:ocsp2-lb.apple.com.akadns.net
-full:ocsp2.apple.com
