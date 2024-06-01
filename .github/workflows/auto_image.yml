@@ -30,7 +30,7 @@ jobs:
         id: extract_version
         run: |
           REPO=${{ secrets.DOCKERHUB_USERNAME }}/mosdns
-          LATEST_VERSION=$(curl -s https://hub.docker.com/v2/repositories/$REPO/tags/?page_size=100 | jq -r '.results | map(select(.name | test("^[0-9]+\\.[0-9]+\\.[0-9]+$"))) | sort_by(.name) | last | .name')
+          LATEST_VERSION=$(curl -s "https://hub.docker.com/v2/repositories/$REPO/tags/?page_size=100" | grep -oP '"name":\s*"\K[0-9]+\.[0-9]+\.[0-9]+' | sort -V | tail -n 1)
           LATEST_VERSION=${LATEST_VERSION:-"1.0.0"}
           VERSION=$(echo $LATEST_VERSION | awk -F. -v OFS=. '{$NF += 1 ; print}')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
