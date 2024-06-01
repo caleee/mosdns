@@ -116,8 +116,6 @@ restart() {
         fi
         log "INFO" "systemctl restart mosdns" "Service restarted successfully"
     fi
-
-
 }
 
 restore() {
@@ -163,8 +161,11 @@ else
     restore)
         restore
         ;;
+    restart)
+        restart
+        ;;
     *)
-        echo "Usage: $0 {check|backup|update|restore}"
+        echo "Usage: $0 {check|backup|update|restore|restart}"
         exit 1
         ;;
     esac
