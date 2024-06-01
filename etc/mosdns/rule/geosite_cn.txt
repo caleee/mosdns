@@ -522,8 +522,8 @@ cn
 citic
 baidu
 alipay
-juntu.com
-qifangw.com
+junxilinux.com
+vxv.ink
 007szx.com
 007zhibo.cc
 00817.com
@@ -573,7 +573,6 @@ qifangw.com
 01401.com
 016sf.com
 01amlink.site
-01bzw.cc
 01bzw.us
 01bzw.xyz
 01caijing.com
@@ -2153,7 +2152,7 @@ qifangw.com
 17xuexi.com
 17xxl.com
 17ya.com
-juqingla.com
+17yaoqu.com
 17ym.org
 17you.com
 17yucai.com
@@ -7480,7 +7479,6 @@ zzzzzz.me
 9560.cc
 9564.com
 9565.com
-9570.me
 9588.com
 95890.com
 95bd.com
@@ -8367,6 +8365,7 @@ ae-people.com
 ae1234.com
 ae256.com
 ae60.com
+ae8569.xyz
 aebiz.net
 aec188.com
 aecichina.com
@@ -10674,7 +10673,7 @@ b1qg.com
 b23.tv
 b2b-builder.com
 b2b.biz
-juqk.net
+b2b123.com
 b2b168.com
 b2b168.net
 b2b168.org
@@ -11587,7 +11586,7 @@ beancomm.com
 bear20.com
 bearead.com
 beargoo.com
-bearingclub.com
+juqk.net
 bearjoy.com
 bearminers.xyz
 bearrental.com
@@ -16306,7 +16305,7 @@ chinascope.com
 chinascopefinancial.com
 chinascrum.org
 chinascsoft.com
-chinaseed114.com
+jurcc.net
 chinasexq.com
 chinashadt.com
 chinashangpinku.com
@@ -16756,6 +16755,7 @@ chugou360.com
 chuguo78.com
 chuguofeng.com
 chuguohao.com
+chuhai-club.com
 chuimg.com
 chuinet.com
 chuisax.com
@@ -17103,7 +17103,6 @@ ckxx.net
 ckzhijiaedu.com
 cl-acg.com
 cl-clw.com
-cl-hs.com
 cl-kongtiao.com
 cl0438.com
 cl2009.com
@@ -17117,6 +17116,7 @@ claritywallpaper.com
 classinpaas.com
 classmateer.com
 classpassincn.com
+classpodcdn.com
 clayidols.com
 clb6.net
 clboss.com
@@ -21126,6 +21126,7 @@ diyifanwen.com
 diyifanwen.net
 diyigaokao.com
 diyihuifu.com
+diyiliuxue.com
 diyinews.com
 diyipaihang.com
 diyishijian.com
@@ -27151,6 +27152,7 @@ zzdengji.com
 global-harbor.com
 global-idc.net
 global-jf.com
+global-leader.com
 global-scsl.com
 global-trade-center.com
 global56.com
@@ -27950,7 +27952,6 @@ guangkatf.com
 guangli88.com
 guanglikou.com
 guanglilvyuan.com
-guangminggame.com
 guangshantang.vip
 guangsuss.com
 guangtuikeji.com
@@ -31761,6 +31762,7 @@ htfutures.com
 htgjjl.com
 htguosheng.com
 htgwf.com
+hti-instrument.com
 htidc.com
 htimgs.com
 htinfor.com
@@ -37862,9 +37864,9 @@ junshizhanlue.com
 junsw.com
 junsz.com
 juntongtian.com
-0-6.com
+juntu.com
 junwu262.com
-junxilinux.com
+0-6.com
 junyao.tech
 junying.com
 junyisj.com
@@ -37882,11 +37884,11 @@ jupiterlauncher.com
 jupup.com
 juqi.com
 juqingjuqing.com
-17yaoqu.com
+juqingla.com
+juqingw.com
+bearingclub.com
 007swz.com
-b2b123.com
-juquanquanapp.com
-jurcc.net
+chinaseed114.com
 juren.com
 jurenqi.com
 jurongfangchan.com
@@ -41359,6 +41361,7 @@ lingmo.org
 lingmovie.com
 lingnanpass.com
 lingosail.com
+lingostarcdn.com
 lingphone.net
 lingquanb.com
 lingrengame.com
@@ -44830,6 +44833,7 @@ mmsfw.com
 mmsk.com
 mmstat.com
 mmsz.net
+mmt3000.com
 mmtrix.com
 mmtx.net
 mmuaa.com
@@ -50462,7 +50466,7 @@ qiezip.com
 qifake.com
 qifan1.com
 qifandianlansh.com
-juqingw.com
+qifangw.com
 qifawang.com
 qifeiye.com
 qifeng-safety.com
@@ -57400,7 +57404,7 @@ suqishi.com
 suqnn.com
 suremotoo.site
 surerp.com
-zycits.com
+zycitscn.com
 surgerycast.com
 surprising.studio
 sursen.com
@@ -57526,7 +57530,7 @@ swsm.net
 swsmu.com
 swstsg.com
 swt0.com
-zyccst.com
+zycits.com
 swvwg.com
 swwlotus.com
 swwy.com
@@ -57672,6 +57676,7 @@ sydjwl.com
 sydw8.com
 syeg-ev.com
 syf.ink
+syfabiao.com
 syfb2021.com
 syfly007.com
 syfw.com
@@ -58516,7 +58521,7 @@ taou.com
 taowola.com
 taoxiaolu.com
 taoxie.com
-zyccc.com
+zyccst.com
 taoxuemei.com
 taoxv.com
 taoyi-support.com
@@ -58856,7 +58861,7 @@ tencent-cloud.net
 tencent-gcloud.com
 tencent-gf.com
 tencent.com
-zyc123.com
+zyccc.com
 tencent.design
 tencent.net
 tencentads.com
@@ -59122,7 +59127,7 @@ thenburn.com
 thenew123.com
 theoborn.com
 theorychina.org
-zybwhsb.com
+zyc123.com
 thepopdaily.com
 thesmartmelon.com
 theszt.com
@@ -59239,6 +59244,7 @@ tianfusoftwarepark.com
 tiangou.xyz
 tianhaohz.com
 tianhejiayi.com
+tianhengs.com
 tianhongdiaosu.com
 tianhongsunshine.com
 tianhujy.com
@@ -59664,7 +59670,7 @@ tjzyefy.com
 tjzyfw.com
 tk-rays.com
 tk-xiong.com
-zybuluo.com
+zybwhsb.com
 tk163.com
 tk233.xyz
 tk315.com
@@ -60267,7 +60273,7 @@ transwarp.io
 transwiki.org
 tratao.com
 travel-x.cc
-zybtp.com
+zybuluo.com
 travelgo.com
 travellingwithhotel.com
 travellinkdaily.com
@@ -60748,7 +60754,7 @@ turingbook.com
 turingdi.com
 turinggear.com
 turingtopia.com
-zybk6.com
+zybtp.com
 turnitincn.com
 turnitinuk.net
 turuio.com
@@ -60948,7 +60954,7 @@ txwb.com
 txweekly.com
 txwestart.com
 txwy.com
-zybird.com
+zybk6.com
 txxbxx.com
 txy6666.com
 txy8.com
@@ -61369,7 +61375,7 @@ ujiuye.com
 uju365.com
 ujxs.com
 uk-edu.com
-zybang.com
+zybird.com
 uk86.com
 ukassignment.org
 ukeban.com
@@ -61543,7 +61549,7 @@ unnnnn.com
 unogenius.com
 unpcn.com
 unqu.com
-zyautoe.com
+zybang.com
 unshan.com
 unspay.com
 unsuv.com
@@ -61588,7 +61594,7 @@ upcdn.net
 upchina.com
 upchinapro.com
 upchinaproduct.com
-zyan456.com
+zyautoe.com
 updeals.com
 updf.com
 updrv.com
@@ -61611,7 +61617,7 @@ uppsd.com
 upqzfile.com
 upqzfilebk.com
 ups-huawei.net
-zyan.cc
+zyan456.com
 ups001.com
 ups88.net
 upsapp.com
@@ -62368,7 +62374,7 @@ viskem.com
 vista123.com
 vistastory.com
 visualchina.com
-zyactech.com
+zyan.cc
 visvachina.com
 vitagou.com
 vitagou.hk
@@ -62422,7 +62428,7 @@ vlinke.com
 vlion.mobi
 vlong.tv
 vlongbiz.com
-zy91.com
+zyactech.com
 vlss.com
 vm.sg
 vm7.com
@@ -62550,7 +62556,7 @@ volcwaf.com
 volcwaf001.com
 voldp.com
 voleai.com
-zy728.com
+zy91.com
 volit.com
 volmoe.com
 voltmemo.com
@@ -62621,7 +62627,7 @@ vr186.com
 vr42.com
 vralzuns.com
 vrbeing.com
-zy120.com
+zy728.com
 vrbig.com
 vrbrothers.com
 vrcaijing.com
@@ -62645,7 +62651,7 @@ vsane.com
 vsbclub.com
 vsbuys.com
 vscenevideo.com
-zy100.com
+zy120.com
 vscops.com
 vsean.net
 vsens.com
@@ -62694,7 +62700,7 @@ vue5.com
 vuevideo.net
 vukfnqr.com
 vulbox.com
-zy-cam.com
+zy100.com
 vultr1.com
 vultrcn.com
 vultrvps.com
@@ -62752,7 +62758,7 @@ vxras.com
 vxsnk.com
 vxuepin.com
 vxuey.com
-vxv.ink
+juquanquanapp.com
 vxwo.com
 vxxsfxxs.com
 vycool.com
@@ -62761,7 +62767,7 @@ vyin.com
 vynior.com
 vysj.com
 vyuan8.com
-zxzyy.com
+zy-cam.com
 vz41.com
 vzan.cc
 vzan.com
@@ -63505,7 +63511,7 @@ wechat.com
 wechat.org
 wechatapp.com
 wechatify.net
-zxzyl.com
+zxzyy.com
 weclassroom.com
 wecloudx.com
 wecom.work
@@ -63538,7 +63544,7 @@ wegame.com
 wegameapi.com
 wegamedeveloper.com
 wegameplus.com
-zxzt123.com
+zxzyl.com
 wegene.com
 weharvest.com
 wehefei.com
@@ -64294,7 +64300,7 @@ whmxrj.com
 whmylike.cc
 whmylikekq.com
 whnfc.com
-zxzmail.com
+zxzt123.com
 whocool.com
 whoolala.com
 whooyan.com
@@ -64511,7 +64517,7 @@ wincheers.net
 wincn.com
 wincome.group
 wind.moe
-zxzhijia.com
+zxzmail.com
 windcoder.com
 windhamchina.com
 windin.com
@@ -64778,7 +64784,7 @@ wmjyqd.net
 wmjyszba.com
 wmlunwen.com
 wmnetwork.cc
-zxyswhcm.com
+zxzhijia.com
 wmp169.com
 wmphp.com
 wmpic.me
@@ -64957,7 +64963,7 @@ wonderscloud.com
 wondersgroup.com
 wondershare.cc
 wondershare.com
-zxxyedu.com
+zxyswhcm.com
 wondershare.net
 wondersmemory.com
 wonderstar027.com
@@ -65182,7 +65188,7 @@ wrshg.com
 wrtnode.cc
 wrtnode.com
 wrtsz.com
-zxxxkj.com
+zxxyedu.com
 wsaf.net
 wsbuluo.com
 wsc-expo.com
@@ -65194,8 +65200,8 @@ wscloudcdn.com
 wscloudcdn.org
 wscloudsec.com
 wscoder.com
+zxxxkj.com
 zxxww.com
-zxxk.com
 wscrm.net
 wscso.com
 wscstrace.com
@@ -65566,11 +65572,12 @@ www-10524.am
 www-123490.com
 www-4620.com
 www-63608.com
+zxxk.com
 zxwyouxi.com
 zxwstong.com
-zxwindow.com
 www.cc
 www.cg
+zxwindow.com
 zxwcbj.com
 zxw51.com
 zxtw168.com
@@ -65585,13 +65592,12 @@ zxshe.com
 zxsg88.com
 zxsctf.com
 zxsauto.com
-zxs-coffee.com
 www48-365365.com
 wwwbuild.net
 wwwer.net
 wwwic.net
+zxs-coffee.com
 zxrtb.com
-zxpmq.com
 wwwwww.vip
 wx-api.net
 wx-data.com
@@ -66315,7 +66321,7 @@ xhslink.com
 xhslw.com
 xhsyqx.com
 xhsyww.com
-zxopen.com
+zxpmq.com
 xhungame.com
 xhup.club
 xhwx100.com
@@ -70416,6 +70422,7 @@ yofogo.com
 yofond.com
 yofond.net
 yofus.com
+yoga-8.com
 yogeev.com
 yogorobot.com
 yoher.com
@@ -72473,7 +72480,7 @@ zesidasi.com
 zesmob.com
 zeststore.com
 zetast.com
-zxnrh.com
+zxopen.com
 zeuux.com
 zeuux.org
 zexiaoqiao.com
@@ -74972,6 +74979,7 @@ zxmall.com
 zxmn2018.com
 zxmseed.com
 zxnic.net
+zxnrh.com
 didimobility.co.jp
 datk.anythinktech.com
 wwwimages2.adobe.com
