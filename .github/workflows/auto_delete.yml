@@ -78,10 +78,10 @@ jobs:
 
       - name: Delete tags without releases
         run: |
-          keep_releases=(${{ env.keep_releases }})
           all_tags=$(git tag -l)
+          release_tags=$(gh release list --limit 1000 | awk '{print $1}')
           for tag in $all_tags; do
-            if ! gh release view $tag > /dev/null 2>&1; then
+            if [[ ! " ${release_tags[@]} " =~ " ${tag} " ]]; then
               git tag -d $tag
               git push origin :refs/tags/$tag
             fi
