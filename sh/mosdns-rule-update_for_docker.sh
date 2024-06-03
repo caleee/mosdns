@@ -70,7 +70,7 @@ download_and_verify() {
 
 unpick() {
     log "INFO" "unpick" "Unpacking ${FILE}..."
-    if ! tar xzf "$FILE" -C /etc/mosdns; then
+    if ! tar xzf "$FILE" -C /; then
         log "ERROR" "tar" "Unpacking ${FILE} failed."
         exit 1
     fi
