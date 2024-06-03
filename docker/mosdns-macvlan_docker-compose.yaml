@@ -1,0 +1,17 @@
+services:
+  mosdns:
+    container_name: mosdns
+    image: caleee/mosdns:latest
+    restart: always
+    networks:
+      macvlan:
+        ipv4_address: 10.10.10.12
+    volumes:
+      - mosdns_data:/etc/mosdns
+
+networks:
+  macvlan:  # 这里是通过"create-macvlan-network_docker-compose.yaml"提前创建好的网络
+    external: true
+
+volumes:
+  mosdns_data:
