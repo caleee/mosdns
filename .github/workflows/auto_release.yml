@@ -40,7 +40,9 @@ jobs:
 
       - name: Calculate sha256 of new tarball
         id: sha_new_tarball
-        run: echo "NEW_TARBALL_HASH=$(sha256sum mosdns_config_${{ env.DATE }}.tar.gz | awk '{print $1}')" >> $GITHUB_ENV
+        run: |
+          echo "NEW_TARBALL_HASH=$(sha256sum mosdns_config_${{ env.DATE }}.tar.gz | awk '{print $1}')" >> $GITHUB_ENV
+          echo "${{ env.NEW_TARBALL_HASH }}  mosdns_config_${{ env.DATE }}.tar.gz" > "mosdns_config_${{ env.DATE }}.tar.gz.sha256sum"
 
       - name: Check if tarballs are different
         run: |
@@ -57,6 +59,8 @@ jobs:
           tag_name: v${{ env.DATE }}
           name: v${{ env.DATE }}
           body: "Package etc directory on date ${{ env.DATE }}"
-          files: mosdns_config_${{ env.DATE }}.tar.gz
+          files: |
+            mosdns_config_${{ env.DATE }}.tar.gz
+            mosdns_config_${{ env.DATE }}.tar.gz.sha256sum
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
