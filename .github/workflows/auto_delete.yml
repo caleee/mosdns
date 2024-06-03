@@ -78,17 +78,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Debug Git repository
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "List files:"
-          ls -la
-          echo "Current Git branch:"
-          git branch -a
-          echo "Git status:"
-          git status
-  
       - name: Delete tags without releases
         run: |
           all_tags=$(git tag -l)
@@ -99,8 +88,10 @@ jobs:
           echo "Release tags:"
           echo "$release_tags"
 
+          IFS=' ' read -r -a release_tags_array <<< "$release_tags"
+
           for tag in $all_tags; do
-            if [[ ! " ${release_tags[@]} " =~ " ${tag} " ]]; then
+            if [[ ! " ${release_tags_array[@]} " =~ " ${tag} " ]]; then
               echo "Deleting tag: $tag"
               git tag -d $tag
               git push origin :refs/tags/$tag
