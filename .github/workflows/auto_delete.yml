@@ -76,6 +76,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Debug Git repository
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "List files:"
+          ls -la
+          echo "Current Git branch:"
+          git branch -a
+          echo "Git status:"
+          git status
+  
       - name: Delete tags without releases
         run: |
           all_tags=$(git tag -l)
