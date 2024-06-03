@@ -1,0 +1,9 @@
+networks:
+  macvlan:  # 这是新建的网络名称，可以自定义
+    driver: macvlan
+    driver_opts:
+      parent: vmbr0  # 这是网卡名，注意修改
+    ipam:
+      config:
+        - subnet: 10.10.0.0/16
+          gateway: 10.10.0.1
