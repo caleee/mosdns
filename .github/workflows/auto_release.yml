@@ -18,31 +18,29 @@ jobs:
       - name: Download and rename latest release asset
         id: download_latest_asset
         run: |
-          gh release download --pattern "mosdns_config_*.tar.gz" --dir .
-          mv mosdns_config_*.tar.gz mosdns_config_latest.tar.gz
+          if gh release download --pattern "mosdns-rule.tar.gz" --dir .; then
+            mv mosdns-rule.tar.gz mosdns-rule-before.tar.gz
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Calculate sha256 of latest tarball
         id: sha_latest_tarball
         run: |
-          if [ -f mosdns_config_latest.tar.gz ]; then
-            echo "LATEST_TARBALL_HASH=$(sha256sum mosdns_config_latest.tar.gz | awk '{print $1}')" >> $GITHUB_ENV
+          if [ -f mosdns-rule-before.tar.gz ]; then
+            echo "LATEST_TARBALL_HASH=$(sha256sum mosdns-rule-before.tar.gz)" >> $GITHUB_ENV
           else
             echo "LATEST_TARBALL_HASH=" >> $GITHUB_ENV
           fi
 
-      - name: Get the date
-        run: echo "DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
-
       - name: Archive etc directory
-        run: git archive -o "mosdns_config_${{ env.DATE }}.tar.gz" HEAD etc/
+        run: git archive -o "mosdns-rule.tar.gz" HEAD etc/mosdns/rule
 
       - name: Calculate sha256 of new tarball
         id: sha_new_tarball
         run: |
-          echo "NEW_TARBALL_HASH=$(sha256sum mosdns_config_${{ env.DATE }}.tar.gz | awk '{print $1}')" >> $GITHUB_ENV
-          echo "${{ env.NEW_TARBALL_HASH }}  mosdns_config_${{ env.DATE }}.tar.gz" > "mosdns_config_${{ env.DATE }}.tar.gz.sha256sum"
+          echo "NEW_TARBALL_HASH=$(sha256sum mosdns-rule.tar.gz)" >> $GITHUB_ENV
+          echo "${{ env.NEW_TARBALL_HASH }}" >"mosdns-rule.tar.gz.sha256sum"
 
       - name: Check if tarballs are different
         run: |
@@ -52,6 +50,9 @@ jobs:
             echo "CHANGES_FOUND=false" >> $GITHUB_ENV
           fi
 
+      - name: Get the date
+        run: echo "DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
+
       - name: Create Release and Upload Asset
         if: env.CHANGES_FOUND == 'true'
         uses: softprops/action-gh-release@v2
@@ -60,7 +61,7 @@ jobs:
           name: v${{ env.DATE }}
           body: "Package etc directory on date ${{ env.DATE }}"
           files: |
-            mosdns_config_${{ env.DATE }}.tar.gz
-            mosdns_config_${{ env.DATE }}.tar.gz.sha256sum
+            mosdns-rule.tar.gz
+            mosdns-rule.tar.gz.sha256sum
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
