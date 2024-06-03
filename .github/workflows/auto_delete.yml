@@ -1,0 +1,78 @@
+name: auto_delete
+
+on:
+  schedule:
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: List all releases
+        id: list_releases
+        run: |
+          gh release list --limit 1000 > releases.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Determine releases to keep
+        id: determine_releases
+        run: |
+          current_month=$(date +'%Y-%m')
+          current_year=$(date +'%Y')
+
+          keep_releases=()
+
+          # 获取当前月的 Releases 和每个月的最后一个 Release
+          while read -r release; do
+            release_date=$(echo $release | awk '{print $3}')
+            release_tag=$(echo $release | awk '{print $1}')
+            
+            release_month=$(date -d $release_date +'%Y-%m')
+            release_year=$(date -d $release_date +'%Y')
+
+            if [[ $release_month == $current_month ]]; then
+              keep_releases+=($release_tag)
+            else
+              last_release_of_month=$(grep $release_month releases.txt | tail -n 1 | awk '{print $1}')
+              if [[ ! " ${keep_releases[@]} " =~ " ${last_release_of_month} " ]]; then
+                keep_releases+=($last_release_of_month)
+              fi
+            fi
+          done < releases.txt
+
+          echo "keep_releases=${keep_releases[@]}" >> $GITHUB_ENV
+
+      - name: Ensure total releases do not exceed 100
+        id: ensure_total_releases
+        run: |
+          keep_releases=(${{ env.keep_releases }})
+          total_releases=$(wc -l < releases.txt)
+          if [ $total_releases -gt 100 ]; then
+            excess_releases=$(($total_releases - 100))
+            old_releases=$(tail -n $excess_releases releases.txt | awk '{print $1}')
+            for release_tag in $old_releases; do
+              if [[ ! " ${keep_releases[@]} " =~ " ${release_tag} " ]]; then
+                gh release delete $release_tag -y
+              fi
+            done
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Delete old releases
+        run: |
+          keep_releases=(${{ env.keep_releases }})
+          while read -r release; do
+            release_tag=$(echo $release | awk '{print $1}')
+            if [[ ! " ${keep_releases[@]} " =~ " ${release_tag} " ]]; then
+              gh release delete $release_tag -y
+            fi
+          done < releases.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
