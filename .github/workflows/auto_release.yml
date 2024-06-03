@@ -39,8 +39,9 @@ jobs:
       - name: Calculate sha256 of new tarball
         id: sha_new_tarball
         run: |
-          echo "NEW_TARBALL_HASH=$(sha256sum mosdns-rule.tar.gz)" >> $GITHUB_ENV
-          echo "${{ env.NEW_TARBALL_HASH }}" >"mosdns-rule.tar.gz.sha256sum"
+          NEW_TARBALL_HASH=$(sha256sum mosdns-rule.tar.gz)
+          echo "NEW_TARBALL_HASH=$NEW_TARBALL_HASH" >> $GITHUB_ENV
+          echo "$NEW_TARBALL_HASH" > "mosdns-rule.tar.gz.sha256sum"
 
       - name: Check if tarballs are different
         run: |
