@@ -2,8 +2,8 @@
 #
 # Filename: mosdns-rule-update_for_docker.sh
 # Author: Cao Lei <caolei@mail.com>
-# Date: 2024/06/03
-# Version: 1.0.0
+# Date: 2024/06/03 -2024/06/04
+# Version: 1.0.1
 # Description: This script is used to initialize and update mosdns rule data (Limited to docker mirroring: caleee/mosdns:latest)
 # Usage: Run this script as root: chmod +x mosdns-rule-update_for_docker.sh && ./mosdns-rule-update_for_docker.sh
 # Note: Ensure that you understand every command's behaviour and be careful when identifying large files
@@ -13,11 +13,11 @@
 
 API_URL="https://api.github.com/repos/caleee/mosdns/releases/latest"
 RES_URL="https://github.com/caleee/mosdns/releases/download"
-URL=$(curl -s $API_URL | grep -o "$RES_URL/v.*.tar.gz")
-SHA_URL=$(curl -s $API_URL | grep -o "$RES_URL/v.*.tar.gz.sha256sum")
+URL=$(curl -s $API_URL | grep -o "$RES_URL/v.*.tar.gz" | tail -1)
+SHA_URL=$(curl -s $API_URL | grep -o "$RES_URL/v.*.tar.gz.sha256sum" | tail -1)
 FILE=$(basename "$URL")
 SHA_FILE=$(basename "$SHA_URL")
-LOG_FILE="/var/log/mosdns_date-update.log"
+LOG_FILE="/var/log/mosdns-rule-update.log"
 TMP_DIR=$(mktemp -d) && cd "$TMP_DIR" || exit 1
 trap 'cd - > /dev/null && rm -rf "$TMP_DIR"' EXIT
 
@@ -61,7 +61,7 @@ download_and_verify() {
     log "INFO" "download_and_verify" "Download ${SHA_FILE} successfully."
 
     log "INFO" "download_and_verify" "Verify ${SHA_FILE} checksum..."
-    if ! sha256sum --check --quiet "${SHA_FILE}"; then
+    if ! sha256sum -c -s "${SHA_FILE}"; then
         log "ERROR" "sha256 --check ${SHA_FILE}" "Verify ${SHA_FILE} failed."
         exit 1
     fi
@@ -80,7 +80,6 @@ unpick() {
 restart() {
     log "INFO" "restart" "Running inside a Docker container"
     log "INFO" "reboot" "The file update is complete, and the container is about to restart."
-    cd - >/dev/null && rm -rf "$TMP_DIR"
     reboot
 }
 
