@@ -14,4 +14,4 @@ COPY ./sh/mosdns-rule-update_for_docker.sh /etc/periodic/daily/
 
 RUN chmod +x /etc/periodic/daily/mosdns-rule-update_for_docker.sh
 
-CMD ["/usr/bin/mosdns", "start", "--dir", "/etc/mosdns"]
+CMD sh -c "crond -f -l 2 & /usr/bin/mosdns start --dir /etc/mosdns"
