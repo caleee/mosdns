@@ -523,7 +523,7 @@ citic
 baidu
 alipay
 junzhuan.com
-chengjing.com
+chinagb.org
 007szx.com
 007zhibo.cc
 00817.com
@@ -13451,7 +13451,7 @@ bstinfo.com
 bstjiaoyu.com
 bstzcs.com
 bsuc.cc
-bsurl.cc
+jusha.com
 bswtan.com
 bsxiaoshuo.com
 bsybx.com
@@ -15678,7 +15678,7 @@ chenggnet.com
 chenggongguiji.com
 chengguw.com
 chengji1859.com
-jushequan.com
+chengjing.com
 chengkao365.com
 chenglang.net
 chenglangyun.com
@@ -16189,7 +16189,7 @@ chinafxd.com
 chinagames.net
 chinagayles.com
 chinagb.net
-chinagb.org
+jushequan.com
 chinagba.com
 chinagdg.com
 chinagiftsfair.com
@@ -21675,7 +21675,7 @@ dogax.xyz
 dogecast.com
 dogecdn.com
 dogecloud.com
-jusha.com
+dogedns.com
 dogedoge.com
 dogevideo.com
 dogfight360.com
@@ -38156,9 +38156,9 @@ jurenqi.com
 jurongfangchan.com
 jurongrencai.com
 juseey.com
-dogedns.com
+bsurl.cc
 007swz.com
-quyiyuan.com
+sxgs.com
 jushigj.com
 jushikk.com
 jushiwangedu.com
@@ -39676,6 +39676,7 @@ kscac.com
 kscdns.com
 kschuangku.com
 ksco.cc
+kscord.com
 ksdedu.com
 ksdq0514.com
 ksedt.com
@@ -51901,7 +51902,7 @@ quxuan.com
 quyaoya.com
 quyibao.com
 quyinginc.com
-jushewang.com
+quyiyuan.com
 quyou.net
 quyouhui.net
 quyu.net
@@ -57985,7 +57986,7 @@ sxggzp.com
 sxglpx.com
 sxgoo.com
 sxgq.net
-sxgs.com
+jushewang.com
 sxgwyw.org
 sxh3k.app
 sxhlcc.com
