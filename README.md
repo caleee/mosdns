@@ -10,7 +10,7 @@
 + 更新脚本配合linux计划任务实现配置更新：`/sh/update.sh`
   + 脚本放到 `/etc/mosdns/` 目录下
   + 添加crontab `0 3 * * * /etc/mosdns/update.sh >>/var/log/consumer-mosdns-script.log 2>&1`
-  + 相关 Issue #2
+  + 相关 [Issue #2](https://github.com/caleee/mosdns/issues/2)
 + 项目不包括`mosdns`程序本身
 
 ## 配置
