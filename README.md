@@ -9,7 +9,9 @@
 + `GEOIP`、`GEOSITE`相关数据文件每日从上游拉取，自动更新，详见`Actions`
 + 更新脚本配合linux计划任务实现配置更新：`/sh/update.sh`
   + 脚本放到 `/etc/mosdns/` 目录下
+  + 脚本的检查、还原、重启功能使用 [ameshkov/dnslookup](https://github.com/ameshkov/dnslookup) 项目，需要自行提前安装，如跳过安装则可直接使用脚本的`update`参数
   + 添加crontab `0 3 * * * /etc/mosdns/update.sh >>/var/log/consumer-mosdns-script.log 2>&1`
+    + 或(跳过安装dnslookup) `0 3 * * * /etc/mosdns/update.sh update >>/var/log/consumer-mosdns-script.log 2>&1`
   + 相关 [Issue #2](https://github.com/caleee/mosdns/issues/2)
 + 项目不包括`mosdns`程序本身
 
