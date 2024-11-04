@@ -1,164 +1,183 @@
-#!/bin/sh
-#
-# Filename: update.sh
-# Author: Cao Lei <caolei@mail.com>
-# Version:  \  Date:
-#   1.0.0   -    2024/11/04
-# Description: This script is used to initialize and update mosdns configuration and data
-# Usage: Run this script as root: chmod +x update.sh && sh update.sh
-# Note: Ensure that you understand every command's behaviour and be careful when identifying large files
-#
-# For crontab(root): 0 3 * * * /bin/sh /etc/mosdns/update.sh >> /var/log/mosdns-update.log 2>&1
-#
+    #!/bin/sh
+    #
+    # Filename: update.sh
+    # Author: Cao Lei <caolei@mail.com>
+    # Version:  \  Date:
+    #   1.0.0   -    2024/11/04
+    # Description: This script is used to initialize and update mosdns configuration and data
+    # Usage: Run this script as root: chmod +x update.sh && sh update.sh
+    # Note: Ensure that you understand every command's behaviour and be careful when identifying large files
+    #
+    # For crontab(root): 0 3 * * * /bin/sh /etc/mosdns/update.sh >> /var/log/mosdns-update.log 2>&1
+    #
 
-LOG_FILE="/var/log/mosdns-update.log"
-MOSDNS_DIR="/etc/mosdns"
-BACKUP_DIR="/var/backup/mosdns"
+    LOG_FILE="/var/log/mosdns-update.log"
+    MOSDNS_DIR="/etc/mosdns"
+    BACKUP_DIR="/var/backup/mosdns"
 
-log() {
-    status="$1"
-    cmd="$2"
-    message="$3"
-    datetime=$(date '+%Y-%m-%dT%H:%M:%S.%6N%:z')
-    script_name=$(basename "$0")
-    user=$(whoami)
+    log() {
+        status="$1"
+        cmd="$2"
+        message="$3"
+        datetime=$(date '+%Y-%m-%dT%H:%M:%S.%6N%:z')
+        script_name=$(basename "$0")
+        user=$(whoami)
 
-    echo "${datetime} ${status} ${script_name} (${user}) CMD (${cmd}) MSG (${message})" >>"${LOG_FILE}"
-}
+        echo "${datetime} ${status} ${script_name} (${user}) CMD (${cmd}) MSG (${message})" >>"${LOG_FILE}"
+    }
 
-check() {
-    if ! systemctl status mosdns >/dev/null 2>&1; then
-        log "ERROR" "systemctl status mosdns" "Service check failed"
-        exit 1
-    fi
+    detect_service_manager() {
+        if command -v systemctl >/dev/null 2>&1; then
+            SERVICE_CMD="systemctl"
+            STATUS_CMD="$SERVICE_CMD status mosdns"
+            RESTART_CMD="$SERVICE_CMD restart mosdns"
+        elif command -v rc-service >/dev/null 2>&1; then
+            SERVICE_CMD="rc-service"
+            STATUS_CMD="$SERVICE_CMD mosdns status"
+            RESTART_CMD="$SERVICE_CMD mosdns restart"
+        else
+            log "ERROR" "Service check" "No compatible service manager found (systemctl or rc-service)"
+            exit 1
+        fi
+    }
 
-    if ! dnslookup baidu.com 127.0.0.1:5353 >/dev/null 2>&1; then
-        log "ERROR" "dnslookup baidu.com 127.0.0.1:5353" "DNS check for baidu.com failed"
-        exit 1
-    fi
+    check() {
+        detect_service_manager
 
-    if ! dnslookup example.org 127.0.0.1:5353 >/dev/null 2>&1; then
-        log "ERROR" "dnslookup example.org 127.0.0.1:5353" "DNS check for example.org failed"
-        exit 1
-    fi
-}
+        if ! $STATUS_CMD >/dev/null 2>&1; then
+            log "ERROR" "$STATUS_CMD" "Service check failed"
+            exit 1
+        fi
 
-backup() {
-    rule_files="mosdns.sh config_custom.yaml config_sample.yaml config.yaml default.yaml rule/blocklist.txt rule/cloudflare-cidr.txt rule/ddnslist.txt rule/disable-ads.txt rule/geoip-only-cn-private_cn.txt rule/geosite_apple.txt rule/geosite_category-ads-all.txt rule/geosite_cn.txt rule/geosite_geolocation-!cn.txt rule/greylist.txt rule/hosts.txt rule/local-ptr.txt rule/redirect.txt rule/whitelist.txt"
-    date=$(date '+%Y%m%d')
-    backup_file="mosdns_${date}.tar.gz"
-    temp_backup_dir=$(mktemp -d)
+        if ! dnslookup baidu.com 127.0.0.1:5353 >/dev/null 2>&1; then
+            log "ERROR" "dnslookup baidu.com 127.0.0.1:5353" "DNS check for baidu.com failed"
+            exit 1
+        fi
 
-    mkdir -p "${MOSDNS_DIR}"
-    mkdir -p "${BACKUP_DIR}"
+        if ! dnslookup example.org 127.0.0.1:5353 >/dev/null 2>&1; then
+            log "ERROR" "dnslookup example.org 127.0.0.1:5353" "DNS check for example.org failed"
+            exit 1
+        fi
+    }
 
-    for file in $rule_files; do
-        dir_to_create=$(dirname "${temp_backup_dir}/mosdns/${file}")
-        mkdir -p "${dir_to_create}"
-        cp "${MOSDNS_DIR}/${file}" "${dir_to_create}/"
-    done
 
-    tar czf "${BACKUP_DIR}/${backup_file}" -C "${temp_backup_dir}/mosdns" .
-    log "INFO" "tar czf ${BACKUP_DIR}/${backup_file}" "Backup successful"
+    backup() {
+        rule_files="config.yaml rule/blocklist.txt rule/cloudflare-cidr.txt rule/ddnslist.txt rule/disable-ads.txt rule/geoip-only-cn-private_cn.txt rule/geosite_apple.txt rule/geosite_category-ads-all.txt rule/geosite_cn.txt rule/geosite_geolocation-!cn.txt rule/greylist.txt rule/hosts.txt rule/local-ptr.txt rule/redirect.txt rule/whitelist.txt"
+        date=$(date '+%Y%m%d')
+        backup_file="mosdns_${date}.tar.gz"
+        temp_backup_dir=$(mktemp -d)
 
-    rm -rf "${temp_backup_dir}"
+        mkdir -p "${MOSDNS_DIR}"
+        mkdir -p "${BACKUP_DIR}"
 
-    # Keep only the latest 3 backups
-    (cd "${BACKUP_DIR}" && ls -t | tail -n +4 | xargs -r rm --)
-}
+        for file in $rule_files; do
+            dir_to_create=$(dirname "${temp_backup_dir}/mosdns/${file}")
+            mkdir -p "${dir_to_create}"
+            cp "${MOSDNS_DIR}/${file}" "${dir_to_create}/"
+        done
 
-update() {
-    TMP_DIR=$(mktemp -d)
+        tar czf "${BACKUP_DIR}/${backup_file}" -C "${temp_backup_dir}/mosdns" .
+        log "INFO" "tar czf ${BACKUP_DIR}/${backup_file}" "Backup successful"
 
-    cd "${TMP_DIR}" || exit 1
+        rm -rf "${temp_backup_dir}"
 
-    url=$(curl -s https://api.github.com/repos/caleee/mosdns/releases/latest | grep -o "https://github.com/caleee/mosdns/releases/download/v.*.tar.gz")
-    if [ -z "$url" ]; then
-        log "ERROR" "curl -s https://api.github.com/repos/caleee/mosdns/releases/latest" "No download URL found"
-        return 1
-    fi
+        # Keep only the latest 3 backups
+        (cd "${BACKUP_DIR}" && ls -t | tail -n +4 | xargs -r rm --)
+    }
 
-    if ! curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "$url"; then
-        log "ERROR" "curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO $url" "Download failed"
-        return 1
-    fi
+    update() {
+        TMP_DIR=$(mktemp -d)
 
-    file=$(basename "$url")
+        cd "${TMP_DIR}" || exit 1
 
-    if ! tar xzf "$file" -C /; then
-        log "ERROR" "tar xzf $file -C /" "Unpacking failed"
-        return 1
-    fi
-
-    cd - >/dev/null || exit 1
-
-    rm -rf "${TMP_DIR}"
-
-    log "INFO" "update" "Mosdns update successfully"
-}
-
-restart() {
-    if [ -f /.dockerenv ] || [ -f /run/.containerenv ]; then
-        log "INFO" "check" "Running inside a Docker container"
-        log "INFO" "reboot" "The file update is complete, and the container is about to restart."
-        reboot
-    else
-        log "INFO" "log" "Running on a normal Linux environment"
-        if ! systemctl restart mosdns; then
-            log "ERROR" "systemctl restart mosdns" "Restart service failed"
+        url=$(curl -s https://api.github.com/repos/caleee/mosdns/releases/latest | grep -o "https://github.com/caleee/mosdns/releases/download/v.*.tar.gz" | head -n 1)
+        if [ -z "$url" ]; then
+            log "ERROR" "curl -s https://api.github.com/repos/caleee/mosdns/releases/latest" "No download URL found"
             return 1
         fi
-        log "INFO" "systemctl restart mosdns" "Service restarted successfully"
-    fi
-}
 
-restore() {
-    backup_file=$(ls -t "${BACKUP_DIR}"/mosdns_*.tar.gz | head -1)
+        if ! curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "$url"; then
+            log "ERROR" "curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO $url" "Download failed"
+            return 1
+        fi
 
-    if [ -z "$backup_file" ]; then
-        log "ERROR" "ls -t ${BACKUP_DIR}/mosdns_*.tar.gz" "No backup file found to restore"
-        return 1
-    fi
+        file=$(basename "$url")
 
-    if ! tar xzf "$backup_file" -C "${MOSDNS_DIR}"; then
-        log "ERROR" "tar xzf $backup_file -C ${MOSDNS_DIR}" "Restore failed"
-        return 1
-    fi
+        if ! tar xzf "$file" -C /; then
+            log "ERROR" "tar xzf $file -C /" "Unpacking failed"
+            return 1
+        fi
 
-    log "INFO" "tar xzf $backup_file -C ${MOSDNS_DIR}" "Restore successful"
-}
+        cd - >/dev/null || exit 1
 
-main() {
-    check
-    backup
-    if ! update; then
-        restore
-    fi
-    restart
-}
+        rm -rf "${TMP_DIR}"
 
-if [ $# -eq 0 ]; then
-    main
-else
-    case "$1" in
-    check)
+        log "INFO" "update" "Mosdns update successfully"
+    }
+
+    restart() {
+        if [ -f /.dockerenv ] || [ -f /run/.containerenv ]; then
+            log "INFO" "check" "Running inside a Docker container"
+            log "INFO" "reboot" "The file update is complete, and the container is about to restart."
+            reboot
+        else
+            log "INFO" "log" "Running on a normal Linux environment"
+            detect_service_manager
+            if ! $RESTART_CMD; then
+                log "ERROR" "restart mosdns" "Restart service failed"
+                return 1
+            fi
+            log "INFO" "restart mosdns" "Service restarted successfully"
+        fi
+    }
+
+    restore() {
+        backup_file=$(ls -t "${BACKUP_DIR}"/mosdns_*.tar.gz | head -1)
+
+        if [ -z "$backup_file" ]; then
+            log "ERROR" "ls -t ${BACKUP_DIR}/mosdns_*.tar.gz" "No backup file found to restore"
+            return 1
+        fi
+
+        if ! tar xzf "$backup_file" -C "${MOSDNS_DIR}"; then
+            log "ERROR" "tar xzf $backup_file -C ${MOSDNS_DIR}" "Restore failed"
+            return 1
+        fi
+
+        log "INFO" "tar xzf $backup_file -C ${MOSDNS_DIR}" "Restore successful"
+    }
+
+    main() {
         check
-        ;;
-    backup)
         backup
-        ;;
-    update)
-        update
-        ;;
-    restore)
-        restore
-        ;;
-    restart)
+        if ! update; then
+            restore
+        fi
         restart
-        ;;
-    *)
-        echo "Usage: $0 {check|backup|update|restore|restart}"
-        exit 1
-        ;;
-    esac
-fi
+    }
+
+    if [ $# -eq 0 ]; then
+        main
+    else
+        case "$1" in
+        check)
+            check
+            ;;
+        backup)
+            backup
+            ;;
+        update)
+            update
+            ;;
+        restore)
+            restore
+            ;;
+        restart)
+            restart
+            ;;
+        *)
+            echo "Usage: $0 {check|backup|update|restore|restart}"
+            exit 1
+            ;;
+        esac
+    fi
