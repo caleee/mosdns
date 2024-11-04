@@ -50,7 +50,7 @@ check() {
 backup() {
     local rule_files date backup_file temp_backup_dir dir_to_create
 
-    rule_files=("mosdns.sh" "config_custom.yaml" "config_sample.yaml" "config.yaml" "default.yaml" "rule/blocklist.txt" "rule/cloudflare-cidr.txt" "rule/ddnslist.txt" "rule/disable-ads.txt" "rule/geoip-only-cn-private_cn.txt" "rule/geosite_apple.txt" "rule/geosite_category-ads-all.txt" "rule/geosite_cn.txt" "rule/geosite_geolocation-!cn.txt" "rule/greylist.txt" "rule/hosts.txt" "rule/local-ptr.txt" "rule/redirect.txt" "rule/whitelist.txt")
+    rule_files=("config.yaml" "rule/blocklist.txt" "rule/cloudflare-cidr.txt" "rule/ddnslist.txt" "rule/disable-ads.txt" "rule/geoip-only-cn-private_cn.txt" "rule/geosite_apple.txt" "rule/geosite_category-ads-all.txt" "rule/geosite_cn.txt" "rule/geosite_geolocation-!cn.txt" "rule/greylist.txt" "rule/hosts.txt" "rule/local-ptr.txt" "rule/redirect.txt" "rule/whitelist.txt")
     date=$(date '+%Y%m%d')
     backup_file="mosdns_${date}.tar.gz"
     temp_backup_dir=$(mktemp -d)
