@@ -1,17 +1,18 @@
 #!/bin/sh
 #
-# Filename: update.sh
+# Filename: mosdns-rule_update.sh
 # Author: Cao Lei <caolei@mail.com>
 # Version:  \  Date:
 #   1.0.0   -    2024/11/04
+#   1.0.2   -    2024/11/05
 # Description: This script is used to initialize and update mosdns configuration and data
-# Usage: Run this script as root: chmod +x update.sh && sh update.sh
+# Usage: Run this script as root: chmod +x mosdns-rule_update.sh && sh mosdns-rule_update.sh
 # Note: Ensure that you understand every command's behaviour and be careful when identifying large files
 #
-# For crontab(root): 0 3 * * * /bin/sh /etc/mosdns/update.sh >> /var/log/mosdns-update.log 2>&1
+# For crontab(root): 0 3 * * * /bin/sh /usr/local/bin/mosdns-rule_update.sh >> /var/log/mosdns-update.log 2>&1
 #
 
-LOG_FILE="/var/log/mosdns-update.log"
+LOG_FILE="/var/log/mosdns-rule_update.log"
 MOSDNS_DIR="/etc/mosdns"
 BACKUP_DIR="/var/backup/mosdns"
 
