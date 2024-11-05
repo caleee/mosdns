@@ -92,6 +92,7 @@ full:clientflow.apple.com.akadns.net
 full:clientservices.googleapis.com
 full:cma.itunes.apple.com
 full:cn-smp-paymentservices.apple.com
+full:cn.download.nvidia.com
 full:cn.widevine.com
 full:cn.windowssearch.com
 full:cnappinstall.googleadapis.com
@@ -532,8 +533,8 @@ cn
 citic
 baidu
 alipay
-jsmxw.com
-tzidt.com
+jsmo.xin
+gz-goam.com
 007qu.com
 007shoes.com
 007swz.com
@@ -2808,7 +2809,7 @@ zzzzzz.me
 21sjmg.com
 21sla.com
 21smov.com
-jsqlawer.com
+21so.com
 21softs.com
 21spv.com
 21sq.org
@@ -10205,6 +10206,7 @@ aliyundrive.net
 aliyunduncc.com
 aliyundunwaf.com
 aliyunedu.net
+aliyunfile.com
 aliyunfuwuqi.com
 aliyunga0017.com
 aliyunga0018.com
@@ -12246,6 +12248,7 @@ bamashenspring.com
 bamatea.com
 bamaying.com
 bamboo18.com
+bambulab.com
 bamengame.com
 bamensq.com
 bamenzhushou.com
@@ -12663,6 +12666,7 @@ bbk.com
 bbk000.com
 bbkantu.com
 bbkys.com
+bblmw.com
 bblskj.com
 bbmuwwxyk.com
 bbmy.net
@@ -13217,6 +13221,7 @@ bestpay.net
 bestpeng.com
 bestqliang.com
 bestreplicheitalia.com
+bestrhy.com
 bestsdwan.com
 bestshinhwa.com
 bestsign.info
@@ -13889,7 +13894,7 @@ bixu.me
 bixuecrm.com
 biya.ltd
 biyabi.com
-jsqstg.com
+biyangwang.com
 biyao.com
 biye.net
 biyehome.net
@@ -23767,7 +23772,7 @@ digitimetech.com
 digitlink.net
 digitser.net
 digiwin.com
-digiwoods.com
+jsqlawer.com
 digiwork.com
 digod.com
 digoexpress.com
@@ -28204,6 +28209,8 @@ fenbei.com
 fenbeijinfu.com
 fenbeitong.com
 fenbi.com
+fenbike.com
+fenbilantian.com
 fenbu.net
 fenby.com
 fencescn.com
@@ -28471,6 +28478,7 @@ fiio.net
 filcochina.com
 file001.com
 filediag.com
+filez.com
 filfox.info
 fillersmart.com
 fillseo.com
@@ -29600,6 +29608,7 @@ fxpai.com
 fxpan.com
 fxqrf.com
 fxsw.net
+fxt365.com
 fxtrip.com
 fxtrips.com
 fxw.la
@@ -31365,6 +31374,7 @@ gmtgx.com
 gmtv.cc
 gmtzy.com
 gmugmu.com
+gmw.com
 gmwiki.com
 gmxmym.ren
 gmyihua.com
@@ -34971,7 +34981,7 @@ gz-cube.com
 gz-data.com
 gz-dazo.com
 gz-ejoy.com
-gz-goam.com
+jsqiuying.com
 gz-guestshow.com
 gz-junan.com
 gz-lodihair.com
@@ -37912,6 +37922,7 @@ hnbidding.com
 hnbits.com
 hnblc.com
 hnbljy.com
+hnbntv.com
 hnbrush.com
 hnbwsd.com
 hnccpit.org
@@ -39721,6 +39732,7 @@ humensec.com
 huming.com
 hummcars.com
 hunancatv.com
+hunaniptv.com
 hunanliantong.com
 hunanpea.com
 hunantv.com
@@ -45600,6 +45612,7 @@ jsdz16.com
 jsdzb.com
 jseduinfo.com
 jseepub.com
+jsehealth.com
 jseoptics.com
 jser.io
 jsf1990.site
@@ -45688,9 +45701,9 @@ jslyjc.com
 jsmfk.com
 jsmian.com
 jsmjys.com
-jsmo.xin
-jsmsg.com
 0-6.com
+jsmsg.com
+jsmxw.com
 jsnaier.com
 jsningyi.com
 jsnol.com
@@ -45708,11 +45721,11 @@ jspeople.com
 jsphp.net
 jspp.com
 jspxcms.com
-jsq886.com
-jsqiuying.com
-21so.com
+kaifubiao.com
 007manhua.com
-biyangwang.com
+digiwoods.com
+jsqq.net
+jsqstg.com
 jsqt.com
 jsrc.com
 jsrcu.com
@@ -46658,7 +46671,7 @@ kaifaxhl.com
 kaifaxueyuan.com
 kaifayun.com
 kaifu.com
-kaifubiao.com
+jsq886.com
 kaifuzq.com
 kaige68.com
 kaigongyi.com
@@ -49512,6 +49525,7 @@ zzcm2.com
 lenovo.net
 lenovocloudos.com
 lenovoeservice.com
+lenovofile.com
 lenovogame.com
 lenovohci.com
 lenovohuishang.com
@@ -49520,6 +49534,7 @@ lenovomm.com
 lenovomobile.com
 lenovonetapp.com
 lenovonowgo.com
+lenovopoc.com
 lenovoprinter.com
 lenovoprinter.net
 lenovosj.com
@@ -53528,6 +53543,7 @@ mepai.me
 mepcec.com
 mepoem.com
 meppon.com
+merach.com
 mercedes-benzarena.com
 mercitime.com
 mereith.com
@@ -53771,6 +53787,7 @@ miaovps.com
 miaoweijianfei.com
 miaowutech.com
 miaoxiazai.com
+miaoyanai.com
 miaoyun.link
 miaozao.com
 miaozhen.com
@@ -70685,6 +70702,8 @@ taibumall.com
 taicent.com
 taichi-graphics.com
 taichi-maker.com
+taichuan.com
+taichuan.net
 taichyfood.com
 taici.com
 taicihome.com
@@ -73925,7 +73944,7 @@ tzgsjc.com
 tzhospital.com
 tzhubo.com
 tzhwcc.com
-jsqq.net
+tzidt.com
 tzjtjx.com
 tzjwrml.com
 tzjxl.com
@@ -86608,6 +86627,7 @@ yunzhixiyou.com
 yunzhizao.net
 yunzhonghe.com
 yunzhu100.com
+yunzhuxue.com
 yunzmall.com
 yunzongnet.com
 yunzujia.com
