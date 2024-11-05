@@ -11,6 +11,7 @@
 #
 # For crontab(root): 0 3 * * * /bin/sh /usr/local/bin/mosdns-rule_update.sh >> /var/log/mosdns-update.log 2>&1
 #
+# # !!! Necessary services or software: 'sh' 'systemd or openrc' 'dnslookup' 'tar'
 
 LOG_FILE="/var/log/mosdns-rule_update.log"
 MOSDNS_DIR="/etc/mosdns"
