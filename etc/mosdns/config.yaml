@@ -69,6 +69,11 @@ plugins:
       tag: cloudflare_cidr
       type: ip_set
     - args:
+        files:
+            - /etc/mosdns/rule/prefer-ipv4.txt
+      tag: prefer_ipv4
+      type: domain_set
+    - args:
         lazy_cache_ttl: 0
         size: 0
       tag: lazy_cache
@@ -111,8 +116,10 @@ plugins:
       tag: forward_remote
       type: forward
     - args:
-        - exec: prefer_ipv4
-        - exec: ecs 110.34.181.1
+        - matches:
+            - qname $prefer_ipv4
+          exec: prefer_ipv4
+#       - exec: ecs 110.34.181.1
         - exec: $forward_remote
       tag: forward_remote_upstream
       type: sequence
