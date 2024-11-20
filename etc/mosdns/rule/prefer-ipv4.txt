@@ -1,0 +1,4 @@
+domain:ai.com
+domain:openai.com
+domain:chatgpt.com
+keyword:chatgpt
