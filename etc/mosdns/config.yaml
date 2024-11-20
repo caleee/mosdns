@@ -1,6 +1,5 @@
 include: []
 log:
-    file: /var/log/mosdns.log
     level: info
 plugins:
     - args:
@@ -116,10 +115,13 @@ plugins:
       tag: forward_remote
       type: forward
     - args:
+        - exec: forward_edns0opt 8
+      tag: forward_edns0opt
+      type: sequence
+    - args:
         - matches:
             - qname $prefer_ipv4
           exec: prefer_ipv4
-#       - exec: ecs 110.34.181.1
         - exec: $forward_remote
       tag: forward_remote_upstream
       type: sequence
