@@ -19,6 +19,10 @@
 104.16.132.229 dns.cloudflare.com
 1.0.0.1 1dot1dot1dot1.cloudflare-dns.com
 1.1.1.1 1dot1dot1dot1.cloudflare-dns.com
+1.0.0.1 one.one.one.one
+1.1.1.1 one.one.one.one
+1.0.0.2 security.cloudflare-dns.com
+1.1.1.2 security.cloudflare-dns.com
 
 # google
 8.8.4.4 dns.google.com
@@ -29,8 +33,8 @@
 # nextdns
 45.11.104.186 dns.nextdns.io
 37.252.249.233 dns.nextdns.io
-45.11.104.186 test.nextdns.io
-37.252.249.233 test.nextdns.io
+45.90.28.0 anycast.dns.nextdns.io
+45.90.30.0 anycast.dns.nextdns.io
 
 # adguard
 94.140.15.15 dns.adguard-dns.com
@@ -39,3 +43,10 @@
 94.140.15.16 family.adguard-dns.com
 94.140.14.35 family-block.dns.adguard.com
 94.140.14.33 standard-block.dns.adguard.com
+
+# ControlD
+76.76.2.11 freedns.controld.com
+
+# 0ms DNS
+104.21.88.221 0ms.dev
+172.67.153.195 0ms.dev
