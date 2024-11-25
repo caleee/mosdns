@@ -13,9 +13,9 @@
 #
 # # !!! Necessary services or software: 'sh' 'systemd or openrc' 'dnslookup' 'tar'
 
-LOG_FILE="/var/log/mosdns-rule_update.log"
-MOSDNS_DIR="/etc/mosdns"
-BACKUP_DIR="/var/backup/mosdns"
+log_file="/var/log/mosdns-rule_update.log"
+mosdns_dir="/etc/mosdns"
+backup_dir="/var/backup/mosdns"
 
 log() {
     status="$1"
@@ -25,18 +25,18 @@ log() {
     script_name=$(basename "$0")
     user=$(whoami)
 
-    echo "${datetime} ${status} ${script_name} (${user}) CMD (${cmd}) MSG (${message})" >>"${LOG_FILE}"
+    echo "${datetime} ${status} ${script_name} (${user}) CMD (${cmd}) MSG (${message})" >>"${log_file}"
 }
 
 detect_service_manager() {
     if command -v systemctl >/dev/null 2>&1; then
-        SERVICE_CMD="systemctl"
-        STATUS_CMD="$SERVICE_CMD status mosdns"
-        RESTART_CMD="$SERVICE_CMD restart mosdns"
+        service_cmd="systemctl"
+        status_cmd="$service_cmd status mosdns"
+        restart_cmd="$service_cmd restart mosdns"
     elif command -v rc-service >/dev/null 2>&1; then
-        SERVICE_CMD="rc-service"
-        STATUS_CMD="$SERVICE_CMD mosdns status"
-        RESTART_CMD="$SERVICE_CMD mosdns restart"
+        service_cmd="rc-service"
+        status_cmd="$service_cmd mosdns status"
+        restart_cmd="$service_cmd mosdns restart"
     else
         log "ERROR" "Service check" "No compatible service manager found (systemctl or rc-service)"
         exit 1
@@ -46,8 +46,8 @@ detect_service_manager() {
 check() {
     detect_service_manager
 
-    if ! $STATUS_CMD >/dev/null 2>&1; then
-        log "ERROR" "$STATUS_CMD" "Service check failed"
+    if ! $status_cmd >/dev/null 2>&1; then
+        log "ERROR" "$status_cmd" "Service check failed"
         exit 1
     fi
 
@@ -68,28 +68,28 @@ backup() {
     backup_file="mosdns_${date}.tar.gz"
     temp_backup_dir=$(mktemp -d)
 
-    mkdir -p "${MOSDNS_DIR}"
-    mkdir -p "${BACKUP_DIR}"
+    mkdir -p "${mosdns_dir}"
+    mkdir -p "${backup_dir}"
 
     for file in $rule_files; do
         dir_to_create=$(dirname "${temp_backup_dir}/mosdns/${file}")
         mkdir -p "${dir_to_create}"
-        cp "${MOSDNS_DIR}/${file}" "${dir_to_create}/"
+        cp "${mosdns_dir}/${file}" "${dir_to_create}/"
     done
 
-    tar czf "${BACKUP_DIR}/${backup_file}" -C "${temp_backup_dir}/mosdns" .
-    log "INFO" "tar czf ${BACKUP_DIR}/${backup_file}" "Backup successful"
+    tar czf "${backup_dir}/${backup_file}" -C "${temp_backup_dir}/mosdns" .
+    log "INFO" "tar czf ${backup_dir}/${backup_file}" "Backup successful"
 
     rm -rf "${temp_backup_dir}"
 
     # Keep only the latest 3 backups
-    (cd "${BACKUP_DIR}" && ls -t | tail -n +4 | xargs -r rm --)
+    (cd "${backup_dir}" && ls -t | tail -n +4 | xargs -r rm --)
 }
 
 update() {
-    TMP_DIR=$(mktemp -d)
+    tmp_dir=$(mktemp -d)
 
-    cd "${TMP_DIR}" || exit 1
+    cd "${tmp_dir}" || exit 1
 
     url=$(curl -s https://api.github.com/repos/caleee/mosdns/releases/latest | grep -o "https://github.com/caleee/mosdns/releases/download/v.*.tar.gz" | head -n 1)
     if [ -z "$url" ]; then
@@ -111,7 +111,7 @@ update() {
 
     cd - >/dev/null || exit 1
 
-    rm -rf "${TMP_DIR}"
+    rm -rf "${tmp_dir}"
 
     log "INFO" "update" "Mosdns update successfully"
 }
@@ -124,7 +124,7 @@ restart() {
     else
         log "INFO" "log" "Running on a normal Linux environment"
         detect_service_manager
-        if ! $RESTART_CMD; then
+        if ! $restart_cmd; then
             log "ERROR" "restart mosdns" "Restart service failed"
             return 1
         fi
@@ -133,19 +133,19 @@ restart() {
 }
 
 restore() {
-    backup_file=$(ls -t "${BACKUP_DIR}"/mosdns_*.tar.gz | head -1)
+    backup_file=$(ls -t "${backup_dir}"/mosdns_*.tar.gz | head -1)
 
     if [ -z "$backup_file" ]; then
-        log "ERROR" "ls -t ${BACKUP_DIR}/mosdns_*.tar.gz" "No backup file found to restore"
+        log "ERROR" "ls -t ${backup_dir}/mosdns_*.tar.gz" "No backup file found to restore"
         return 1
     fi
 
-    if ! tar xzf "$backup_file" -C "${MOSDNS_DIR}"; then
-        log "ERROR" "tar xzf $backup_file -C ${MOSDNS_DIR}" "Restore failed"
+    if ! tar xzf "$backup_file" -C "${mosdns_dir}"; then
+        log "ERROR" "tar xzf $backup_file -C ${mosdns_dir}" "Restore failed"
         return 1
     fi
 
-    log "INFO" "tar xzf $backup_file -C ${MOSDNS_DIR}" "Restore successful"
+    log "INFO" "tar xzf $backup_file -C ${mosdns_dir}" "Restore successful"
 }
 
 main() {
