@@ -64,5 +64,17 @@ jobs:
           files: |
             mosdns-rule.tar.gz
             mosdns-rule.tar.gz.sha256sum
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Ensure tag exists
+        if: env.CHANGES_FOUND == 'true'
+        run: |
+          if ! git rev-parse "v${{ env.DATE }}" >/dev/null 2>&1; then
+            git tag "v${{ env.DATE }}"
+            git push origin "v${{ env.DATE }}"
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
