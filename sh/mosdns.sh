@@ -106,7 +106,7 @@ update() {
 restart() {
     log "INFO" "systemctl restart" "Start restarting the mosdns service."
     for attempt in 1 2; do
-        if systemctl systemctl restart mosdns; then
+        if systemctl restart mosdns; then
             log "INFO" "systemctl restart" "Mosdns service successfully restarted on attempt $attempt."
             if systemctl is-active --quiet mosdns.service; then
                 log "INFO" "systemctl is-active" "Mosdns service is active and running."
