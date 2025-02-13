@@ -2,8 +2,8 @@
 #
 # Filename: mosdns.sh
 # Author: Cao Lei <caolei@mail.com>
-# Date: 2024/03/28 - 2024/06/01
-# Version: 1.1.0
+# Date: 2024/03/28 - 2025/02/13
+# Version: 1.1.1
 # Description: This script is used to initialize and update mosdns configuration and data
 # Usage: Run this script as root: chmod +x mosdns.sh && ./mosdns.sh
 # Note: Ensure that you understand every command's behaviour and be careful when identifying large files
@@ -78,15 +78,19 @@ update() {
 
     pushd "${TMP_DIR}" >/dev/null || exit 1
 
-    url=$(curl -s https://api.github.com/repos/caleee/mosdns/releases/latest | grep -o "https://github.com/caleee/mosdns/releases/download/v.*.tar.gz")
+    url=$(curl -s https://api.github.com/repos/caleee/mosdns/releases/latest | grep -o "https://github.com/caleee/mosdns/releases/download/v.*.tar.gz" | head -n 1)
     if [ -z "$url" ]; then
         log "ERROR" "curl -s https://api.github.com/repos/caleee/mosdns/releases/latest" "No download URL found"
         return 1
     fi
 
     if ! curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "$url"; then
-        log "ERROR" "curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO $url" "Download failed"
-        return 1
+        if [ $? -eq 28 ]; then
+            log "WARNING" "curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO $url" "Timeout occurred, retrying with proxy"
+            if ! curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "https://gh-proxy.com/$url"; then
+                log "ERROR" "curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO $url" "Download failed"
+                return 1
+            fi
     fi
 
     file=$(basename "$url")
