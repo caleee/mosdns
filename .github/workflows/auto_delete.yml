@@ -26,26 +26,26 @@ jobs:
         id: determine_releases
         run: |
           current_month=$(date +'%Y-%m')
-          current_year=$(date +'%Y')
-
           keep_releases=()
+          declare -A first_releases_of_month
+
+          # Sort releases by date in descending order
+          sort -k3,3r releases.txt > sorted_releases.txt
 
           while read -r release; do
             release_date=$(echo $release | awk '{print $3}')
             release_tag=$(echo $release | awk '{print $1}')
-            
             release_month=$(date -d $release_date +'%Y-%m')
-            release_year=$(date -d $release_date +'%Y')
 
             if [[ $release_month == $current_month ]]; then
+              # Keep all releases from current month
               keep_releases+=($release_tag)
-            else
-              last_release_of_month=$(grep $release_month releases.txt | tail -n 1 | awk '{print $1}')
-              if [[ ! " ${keep_releases[@]} " =~ " ${last_release_of_month} " ]]; then
-                keep_releases+=($last_release_of_month)
-              fi
+            elif [[ -z "${first_releases_of_month[$release_month]}" ]]; then
+              # Keep first release of each past month
+              first_releases_of_month[$release_month]=$release_tag
+              keep_releases+=($release_tag)
             fi
-          done < releases.txt
+          done < sorted_releases.txt
 
           echo "keep_releases=${keep_releases[@]}" >> $GITHUB_ENV
 
