@@ -2,8 +2,9 @@
 #
 # Filename: mosdns-data_update.sh
 # Author: Cao Lei <caolei@mail.com>
-# Version: 1.0.0
-# Date: 2024/02/14
+# Version: 1.0.0 - 1.0.1
+# Date: 2024/02/14 - 2024/02/15
+# License: Apache 2.0
 # Description: This script is used to initialize and update mosdns configuration and data
 # Usage: Run this script as root: chmod +x mosdns-data_update.sh && sh mosdns-data_update.sh
 # Note: Ensure that you understand every command's behaviour and be careful when identifying large files
@@ -67,7 +68,7 @@ rotate_logs() {
     fi
 
     # Keep only the latest 5 rotated logs
-    find "$log_dir" -maxdepth 1 -name "$(basename "$log_file")*tar.gz" -type f -exec ls -1t {} + | \
+    find "$log_dir" -maxdepth 1 -name "$(basename "$log_file")*tar.gz" -type f -exec ls -1t {} + |
         tail -n +6 | xargs rm -f -- 2>/dev/null
 }
 
@@ -105,7 +106,6 @@ detect_service_manager() {
 # Function: Check service status
 check_service_status() {
     log "INFO" "Starting service status check" "check" "$LINENO"
-    detect_service_manager
 
     if ! $status_cmd >/dev/null 2>&1; then
         log "ERROR" "Service check failed" "$status_cmd" "$LINENO"
@@ -113,13 +113,11 @@ check_service_status() {
     fi
 
     if ! dig @127.0.0.1 -p 5353 baidu.com +short >/dev/null 2>&1; then
-        log "ERROR" "DNS check for baidu.com failed" "dig" "$LINENO"
-        exit 1
+        log "WARNING" "DNS check for baidu.com failed" "dig" "$LINENO"
     fi
 
     if ! dig @127.0.0.1 -p 5353 example.org +short >/dev/null 2>&1; then
-        log "ERROR" "DNS check for example.org failed" "dig" "$LINENO"
-        exit 1
+        log "WARNING" "DNS check for example.org failed" "dig" "$LINENO"
     fi
 
     log "INFO" "Service check passed" "check" "$LINENO"
@@ -158,7 +156,7 @@ backup_data() {
     rm -rf "${temp_backup_dir}"
 
     # Keep only the latest backups
-    find "$backup_dir" -maxdepth 1 -name "mosdns_*.tar.gz" -type f -exec ls -1t {} + | \
+    find "$backup_dir" -maxdepth 1 -name "mosdns_*.tar.gz" -type f -exec ls -1t {} + |
         tail -n +$((max_backups + 1)) | xargs rm -f -- 2>/dev/null
     log "INFO" "Old backups cleaned up" "backup" "$LINENO"
 }
@@ -166,19 +164,18 @@ backup_data() {
 # Function: Update mosdns
 update_data() {
     log "INFO" "Starting update process" "update" "$LINENO"
-    _ret=0
     tmp_dir=$(mktemp -d)
+
     cd "${tmp_dir}" || {
         log "ERROR" "Failed to change directory" "update_data" "$LINENO"
-        rm -rf "${tmp_dir}"
-        return 1
+        exit 1
     }
 
     log "INFO" "Fetching latest release information" "update" "$LINENO"
     _url=$(curl -s https://api.github.com/repos/caleee/mosdns/releases/latest | grep -o "https://github.com/caleee/mosdns/releases/download/v.*.tar.gz" | head -n 1)
     if [ -z "$_url" ]; then
         log "ERROR" "No download URL found" "update" "$LINENO"
-        _ret=1
+        exit 1
     else
         log "INFO" "Downloading latest release" "update" "$LINENO"
         if ! curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "$_url"; then
@@ -186,31 +183,23 @@ update_data() {
                 log "WARNING" "Timeout occurred, retrying with proxy" "update" "$LINENO"
                 if ! curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "https://gh-proxy.com/$_url"; then
                     log "ERROR" "Download failed" "update" "$LINENO"
-                    _ret=1
+                    exit 1
                 fi
             else
                 log "ERROR" "Download failed" "update" "$LINENO"
-                _ret=1
+                exit 1
             fi
         fi
 
-        if [ $_ret -eq 0 ]; then
-            _file=$(basename "$_url")
-            log "INFO" "Unpacking update" "update" "$LINENO"
-            if ! tar xzf "$_file" -C /; then
-                log "ERROR" "Unpacking failed" "update" "$LINENO"
-                _ret=1
-            fi
+        _file=$(basename "$_url")
+        log "INFO" "Unpacking update" "update" "$LINENO"
+        if ! tar xzf "$_file" -C /; then
+            log "ERROR" "Unpacking failed" "update" "$LINENO"
+            exit 1
         fi
     fi
 
-    cd "$OLDPWD" || log "WARNING" "Failed to return to original directory" "update" "$LINENO"
-    rm -rf "${tmp_dir}"
-
-    if [ $_ret -eq 0 ]; then
-        log "INFO" "Update successful" "update" "$LINENO"
-    fi
-    return $_ret
+    log "INFO" "Update successful" "update" "$LINENO"
 }
 
 # Function: Restart service
@@ -257,6 +246,7 @@ restore_data() {
 
 # Function: Cleanup on exit
 cleanup() {
+    cd /tmp || log "WARNING" "Failed to change directory to /tmp" "cleanup" "$LINENO"
     [ -n "${tmp_dir-}" ] && rm -rf "${tmp_dir}"
     [ -n "${temp_backup_dir-}" ] && rm -rf "${temp_backup_dir}"
     log "INFO" "Cleanup completed" "cleanup" "$LINENO"
@@ -266,12 +256,15 @@ cleanup() {
 main() {
     check_commands
     [ "$rotatelogs" = "true" ] && rotate_logs
+    detect_service_manager
     check_service_status
     backup_data
-    if ! update_data; then
+    update_data
+    if ! restart_service; then
+        log "WARNING" "Failed to restart service" "main" "$LINENO"
         restore_data
     fi
-    restart
+    restart_service
 }
 
 # Trap cleanup
@@ -282,24 +275,24 @@ if [ $# -eq 0 ]; then
     main
 else
     case "$1" in
-        check)
-            check_service_status
-            ;;
-        backup)
-            backup_data
-            ;;
-        update)
-            update_data
-            ;;
-        restore)
-            restore_data
-            ;;
-        restart)
-            restart_service
-            ;;
-        *)
-            echo "Usage: $0 {check|backup|update|restore|restart}"
-            exit 1
-            ;;
+    check)
+        check_service_status
+        ;;
+    backup)
+        backup_data
+        ;;
+    update)
+        update_data
+        ;;
+    restore)
+        restore_data
+        ;;
+    restart)
+        restart_service
+        ;;
+    *)
+        echo "Usage: $0 {check|backup|update|restore|restart}"
+        exit 1
+        ;;
     esac
 fi
