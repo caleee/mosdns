@@ -107,16 +107,20 @@ detect_service_manager() {
 check_service_status() {
     log "INFO" "Starting service status check" "check" "$LINENO"
 
+    mosdns_port=$(grep -m 1 "listen:.*:[0-9]\+" "$mosdns_dir/config.yaml" | awk -F':' '{print $NF}')
+    # Default port if not modified in calee/mosdns:/etc/mosdns/config.yaml
+    : "${mosdns_port:=5353}" 
+
     if ! $status_cmd >/dev/null 2>&1; then
         log "ERROR" "Service check failed" "$status_cmd" "$LINENO"
         exit 1
     fi
 
-    if ! dig @127.0.0.1 -p 5353 baidu.com +short >/dev/null 2>&1; then
+    if ! dig @127.0.0.1 -p "$mosdns_port" baidu.com +short >/dev/null 2>&1; then
         log "WARNING" "DNS check for baidu.com failed" "dig" "$LINENO"
     fi
 
-    if ! dig @127.0.0.1 -p 5353 example.org +short >/dev/null 2>&1; then
+    if ! dig @127.0.0.1 -p "$mosdns_port" example.org +short >/dev/null 2>&1; then
         log "WARNING" "DNS check for example.org failed" "dig" "$LINENO"
     fi
 
