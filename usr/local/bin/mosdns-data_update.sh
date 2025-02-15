@@ -10,22 +10,28 @@
 #
 # For crontab(root): 0 3 * * * /bin/sh /usr/local/bin/mosdns-data_update.sh
 #
-# !!! Necessary services or software: 'sh' 'systemd or openrc' 'dnslookup' 'tar' 'curl'
+# !!! Necessary services or software: 'sh' 'systemd or openrc' 'dig' 'tar' 'curl'
 
 # Function switch: Rotate logs
 rotatelogs="false"
 
 # Script-level Variables
-log_dir="/var/log/mosdns"
-log_file="${log_dir}/$(basename "$0").log"
+server_name="mosdns"
+log_dir="/var/log/$server_name"
+log_file="$log_dir/$(basename "$0").log"
 mosdns_dir="/etc/mosdns"
 backup_dir="/var/backup/mosdns"
 max_backups=3
 max_log_size=$((1 * 1024 * 1024)) # 1MB
 
+# Create log directory if it doesn't exist
+mkdir -p "$(dirname "$log_file")"
+
 # Function: Generate session ID for logging
 generate_session_id() {
+    # shellcheck disable=SC3028
     echo "$(date +%Y%m%d%H%M%S)$RANDOM"
+    # echo "$(date +%Y%m%d%H%M%S)$(awk 'BEGIN{srand();print int(rand()*32768)}')"
 }
 
 # Function: Log messages in JSON format
@@ -35,8 +41,6 @@ log() {
     _command="$3"
     _line_number="$4"
     _session_id=$(generate_session_id)
-
-    mkdir -p "$(dirname "$log_file")"
 
     printf '{"timestamp":"%s","log_level":"%s","message":"%s","host_name":"%s","user_name":"%s",' \
         "$(date +%Y-%m-%dT%H:%M:%S%z)" "$_log_level" "$_message" "$(hostname)" "$(whoami)" >>"$log_file"
