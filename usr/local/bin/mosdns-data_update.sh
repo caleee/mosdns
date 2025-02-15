@@ -7,11 +7,11 @@
 # License: Apache 2.0
 # Description: This script is used to initialize and update mosdns configuration and data
 # Usage: Run this script as root: chmod +x mosdns-data_update.sh && sh mosdns-data_update.sh
-# Note: Ensure that you understand every command's behaviour and be careful when identifying large files
-#
 # For crontab(root): 0 3 * * * /bin/sh /usr/local/bin/mosdns-data_update.sh
+# !!! Warning: Ensure that you understand every command's behaviour and be careful when identifying large files
+# ! Necessary services or software: 'sh' 'systemd or openrc' 'dig' 'tar' 'curl'
+# This script will create a log file in /var/log/mosdns/mosdns-data_update.log
 #
-# !!! Necessary services or software: 'sh' 'systemd or openrc' 'dig' 'tar' 'curl'
 
 # Function switch: Rotate logs
 rotatelogs="false"
