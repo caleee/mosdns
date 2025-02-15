@@ -166,48 +166,51 @@ backup_data() {
 # Function: Update mosdns
 update_data() {
     log "INFO" "Starting update process" "update" "$LINENO"
+    _ret=0
     tmp_dir=$(mktemp -d)
-    cd "${tmp_dir}" || exit 1
+    cd "${tmp_dir}" || {
+        log "ERROR" "Failed to change directory" "update_data" "$LINENO"
+        rm -rf "${tmp_dir}"
+        return 1
+    }
 
     log "INFO" "Fetching latest release information" "update" "$LINENO"
     _url=$(curl -s https://api.github.com/repos/caleee/mosdns/releases/latest | grep -o "https://github.com/caleee/mosdns/releases/download/v.*.tar.gz" | head -n 1)
     if [ -z "$_url" ]; then
         log "ERROR" "No download URL found" "update" "$LINENO"
-        return 1
-    fi
-
-    log "INFO" "Downloading latest release" "update" "$LINENO"
-    if ! curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "$_url"; then
-        if [ $? -eq 28 ]; then
-            log "WARNING" "Timeout occurred, retrying with proxy" "update" "$LINENO"
-            if ! curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "https://gh-proxy.com/$_url"; then
+        _ret=1
+    else
+        log "INFO" "Downloading latest release" "update" "$LINENO"
+        if ! curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "$_url"; then
+            if [ $? -eq 28 ]; then
+                log "WARNING" "Timeout occurred, retrying with proxy" "update" "$LINENO"
+                if ! curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "https://gh-proxy.com/$_url"; then
+                    log "ERROR" "Download failed" "update" "$LINENO"
+                    _ret=1
+                fi
+            else
                 log "ERROR" "Download failed" "update" "$LINENO"
-                cd - >/dev/null || exit 1
-                rm -rf "${tmp_dir}"
-                return 1
+                _ret=1
             fi
-        else
-            log "ERROR" "Download failed" "update" "$LINENO"
-            cd - >/dev/null || exit 1
-            rm -rf "${tmp_dir}"
-            return 1
+        fi
+
+        if [ $_ret -eq 0 ]; then
+            _file=$(basename "$_url")
+            log "INFO" "Unpacking update" "update" "$LINENO"
+            if ! tar xzf "$_file" -C /; then
+                log "ERROR" "Unpacking failed" "update" "$LINENO"
+                _ret=1
+            fi
         fi
     fi
 
-    _file=$(basename "$_url")
-
-    log "INFO" "Unpacking update" "update" "$LINENO"
-    if ! tar xzf "$_file" -C /; then
-        log "ERROR" "Unpacking failed" "update" "$LINENO"
-        cd - >/dev/null || exit 1
-        rm -rf "${tmp_dir}"
-        return 1
-    fi
-
-    cd - >/dev/null || exit 1
+    cd "$OLDPWD" || log "WARNING" "Failed to return to original directory" "update" "$LINENO"
     rm -rf "${tmp_dir}"
 
-    log "INFO" "Update successful" "update" "$LINENO"
+    if [ $_ret -eq 0 ]; then
+        log "INFO" "Update successful" "update" "$LINENO"
+    fi
+    return $_ret
 }
 
 # Function: Restart service
