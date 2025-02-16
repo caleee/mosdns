@@ -3,7 +3,7 @@
 # Filename: mosdns.sh
 # Author: Cao Lei <caolei@mail.com>
 # Date: 2025/02/16
-# Version: 1.0.0
+# Version: 1.0.0 - 1.0.1
 # License: Apache 2.0
 # Description: This script is used to install mosdns automatically on Linux distributions
 #              This script is also used to update mosdns or data
@@ -149,7 +149,7 @@ install_dependencies() {
         ;;
     *Red*Hat* | *CentOS* | *Fedora*)
         _dig_package="bind-utils"
-        if ! yum -q install -y $_dependencies $_dig_package; then
+        if ! yum -q install -y $_dependencies $_dig_package >/dev/null 2>&1; then
             log "ERROR" "Failed to install dependencies" "yum" "$LINENO"
             exit 1
         fi
@@ -681,7 +681,7 @@ trap cleanup EXIT INT TERM
 if [ $# -eq 0 ]; then
     if command -v mosdns >/dev/null 2>&1; then
         _mosdns_path="/usr/local/bin/mosdns"
-        _actual_path=$(which mosdns)
+        _actual_path=$(command -v mosdns)
         if [ "$_actual_path" != "$_mosdns_path" ]; then
             log "ERROR" "Detected mosdns at unexpected location: $_actual_path" "main" "$LINENO"
             echo "This script only manages mosdns installed at $_mosdns_path"
