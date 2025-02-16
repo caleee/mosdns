@@ -10,7 +10,7 @@ RUN apk update && \
 
 COPY ./etc/mosdns/ /etc/mosdns/
 
-COPY ./sh/mosdns-rule-update_for_docker.sh /etc/periodic/daily/
+COPY ./docker/mosdns-rule-update_for_docker.sh /etc/periodic/daily/
 
 RUN chmod +x /etc/periodic/daily/mosdns-rule-update_for_docker.sh
 
