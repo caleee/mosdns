@@ -68,6 +68,12 @@ crontab -e
 0 3 * * * /bin/sh /usr/local/bin/mosdns.sh update-rules
 ```
 
+一键设置计划任务(慎用)
+```bash
+echo "$(crontab -l ; echo -e "\n# mosdns rules update\n0 3 * * * /bin/sh /usr/local/mosdns.sh update-rules")" | crontab - &
+& crontab -l
+```
+
 ### 卸载
 
 ```bash
