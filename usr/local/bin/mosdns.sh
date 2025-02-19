@@ -1,17 +1,18 @@
 #!/bin/sh
 #
 # Filename: mosdns.sh
-# Author: Cao Lei <caolei@mail.com>
-# Date: 2025/02/16
-# Version: 1.0.0 - 1.0.1
 # License: Apache 2.0
+# Author: Cao Lei <caolei@mail.com>
+# Latest Version: 1.0.1
+# Release: 1.0.0 - Date: 2025/02/16 - Message: Initial release
+# Release: 1.0.1 - Date: 2025/02/19 - Message: Modify the curl download logic
 # Description: This script is used to install mosdns automatically on Linux distributions
 #              This script is also used to update mosdns or data
 # Usage: Run this script as root: chmod +x mosdns.sh && ./mosdns.sh
 # For crontab(root): 0 3 * * * /bin/sh /usr/local/bin/mosdns.sh update-rules
 # !!! Warning: Ensure that you understand every command's behaviour and be careful when identifying large files
-# ! OS compatibility: 'Ubuntu', 'Debian', 'RedHat', 'CentOS', 'Fedora', 'Alpine'
-# ! Necessary services or software: 'sh' 'systemd or openrc' 'dig' 'tar' 'curl'
+# ! OS compatibility: 'Debian','Ubuntu','RedHat','CentOS','Fedora','Alpine'
+# ! Necessary services or software: 'sh','systemd or openrc','apt-get or yum or apk','curl','unzip','tar','dig'
 # This script will create a log file in /var/log/mosdns/mosdns.sh.log
 #
 
@@ -182,16 +183,18 @@ download_mosdns() {
         exit 1
     fi
 
-    if ! curl --connect-timeout 5 -m 120 --ipv4 -kfsSLO "$_url"; then
-        if [ $? -eq 28 ]; then
-            log "WARNING" "Timeout occurred, retrying with proxy" "curl" "$LINENO"
-            if ! curl --connect-timeout 5 -m 120 --ipv4 -kfsSLO "https://gh-proxy.com/$_url"; then
-                log "ERROR" "Download failed" "curl" "$LINENO"
+    if curl --connect-timeout 5 -m 90 --ipv4 -kfsSLO "$_url"; then
+        log "INFO" "Download successful" "download_mosdns" "$LINENO"
+    else
+        log "WARNING" "Direct download failed, retrying with proxy" "curl" "$LINENO"
+        _proxy_url="https://gh-proxy.com/$_url"
+        if ! curl --connect-timeout 5 -m 90 --ipv4 -kfsSLO "$_proxy_url"; then
+            log "WARNING" "Proxy download failed, trying mirror" "curl" "$LINENO"
+            _mirror_url="https://ghproxy.net/$_url"
+            if ! curl --connect-timeout 5 -m 90 --ipv4 -kfsSLO "$_mirror_url"; then
+                log "ERROR" "All download attempts failed" "curl" "$LINENO"
                 exit 1
             fi
-        else
-            log "ERROR" "Download failed" "curl" "$LINENO"
-            exit 1
         fi
     fi
 
@@ -208,18 +211,19 @@ download_mosdns() {
 download_config() {
     log "INFO" "Downloading mosdns config" "download_config" "$LINENO"
 
-    if ! curl --connect-timeout 5 -m 20 --ipv4 -kfsSLO \
+    if curl --connect-timeout 5 -m 20 --ipv4 -kfsSLO \
         "https://testingcf.jsdelivr.net/gh/caleee/mosdns@main/etc/mosdns/config.yaml"; then
-        if [ $? -eq 28 ]; then
-            log "WARNING" "Timeout occurred, retrying with proxy" "curl" "$LINENO"
+        log "INFO" "Download successful" "download_config" "$LINENO"
+    else
+        log "WARNING" "Direct download failed, trying alternative CDN" "curl" "$LINENO"
+        if ! curl --connect-timeout 5 -m 20 --ipv4 -kfsSLO \
+            "https://cdn.jsdelivr.net/gh/caleee/mosdns@main/etc/mosdns/config.yaml"; then
+            log "WARNING" "CDN download failed, trying proxy" "curl" "$LINENO"
             if ! curl --connect-timeout 5 -m 20 --ipv4 -kfsSLO \
-                "https://cdn.jsdelivr.net/gh/caleee/mosdns@main/etc/mosdns/config.yaml"; then
-                log "ERROR" "Download config failed" "curl" "$LINENO"
+                "https://fastly.jsdelivr.net/gh/caleee/mosdns@main/etc/mosdns/config.yaml"; then
+                log "ERROR" "All download attempts failed" "curl" "$LINENO"
                 exit 1
             fi
-        else
-            log "ERROR" "Download config failed" "curl" "$LINENO"
-            exit 1
         fi
     fi
 
@@ -238,16 +242,18 @@ download_rules() {
         exit 1
     fi
 
-    if ! curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "$_url"; then
-        if [ $? -eq 28 ]; then
-            log "WARNING" "Timeout occurred, retrying with proxy" "curl" "$LINENO"
-            if ! curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "https://gh-proxy.com/$_url"; then
-                log "ERROR" "Download rules failed" "curl" "$LINENO"
+    if curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "$_url"; then
+        log "INFO" "Download successful" "download_rules" "$LINENO"
+    else
+        log "WARNING" "Direct download failed, retrying with proxy" "curl" "$LINENO"
+        _proxy_url="https://gh-proxy.com/$_url"
+        if ! curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "$_proxy_url"; then
+            log "WARNING" "Proxy download failed, trying mirror" "curl" "$LINENO"
+            _mirror_url="https://ghproxy.net/$_url"
+            if ! curl --connect-timeout 5 -m 60 --ipv4 -kfsSLO "$_mirror_url"; then
+                log "ERROR" "All download attempts failed" "curl" "$LINENO"
                 exit 1
             fi
-        else
-            log "ERROR" "Download rules failed" "curl" "$LINENO"
-            exit 1
         fi
     fi
 
