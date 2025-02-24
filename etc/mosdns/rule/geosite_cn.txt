@@ -110,6 +110,7 @@ full:csi.gstatic.com
 full:cstat.apple.com
 full:cstat.cdn-apple.com
 full:ctldl.windowsupdate.com
+full:cueme-api.quark.cn
 full:dartsearch-cn.net
 full:dd-cdn.origin-apple.com.akadns.net
 full:dejavu.apple.com
@@ -533,8 +534,8 @@ cn
 citic
 baidu
 alipay
-jtggame.com
-sohuu.com
+jtimg.com
+shopjyh.com
 007swz.com
 007szx.com
 00817.com
@@ -1713,7 +1714,6 @@ sohuu.com
 123baofeng.com
 123bo.com
 123boligang.com
-zzzzzz.me
 123ds.org
 123du.cc
 123ems.com
@@ -2436,7 +2436,6 @@ zzzzzz.me
 18837331771.com
 18856.com
 188628.com
-zzzzaaaa.com
 1888.gs
 18888.com
 188bifen.com
@@ -2754,9 +2753,9 @@ zzzzaaaa.com
 1zr.com
 1zu.com
 1zw.com
-zzzyy.com
 2-33.com
 2-class.com
+zzzzzz.me
 2-mm.net
 2.biz
 2000200.com
@@ -9054,7 +9053,8 @@ abcjiaoyu.com
 abcjifang.com
 abckantu.com
 abclogs.com
-zzzymjg.com
+zzzzaaaa.com
+zzzyy.com
 abcs8.com
 abcsbank.com
 abcve.com
@@ -9139,7 +9139,7 @@ accesspath.com
 accgame.com
 acconsys.com
 accopower.com
-zzzyk.com
+zzzymjg.com
 accr.cc
 accsh.org
 acctdns.com
@@ -10057,7 +10057,7 @@ airmb.com
 airmobyte.com
 airmzp.com
 airnut.com
-zzzyb.com
+zzzyk.com
 airpipetech.com
 airportcip.com
 airportcn.com
@@ -10997,7 +10997,7 @@ antekoptics.net
 antfans.com
 antfin-inc.com
 antfin.com
-jttzsy.com
+antforecast.com
 antfortune.com
 antgroup.com
 antibanads.com
@@ -11262,7 +11262,7 @@ apgoview.com
 aphidic.com
 api-forwards.com
 api-m.com
-zzzxwh.net
+zzzyb.com
 apiadmin.org
 apiairasia.com
 apiandroid.com
@@ -11759,10 +11759,10 @@ asrmicro.com
 assassinscreedcodenamejade.com
 assemblydragon.com
 assess.gdn
+zzzxwh.net
 zzzsxx.com
 zzzqqp.com
 zzzppp.com
-zzznkq.com
 asso.bj
 assrt.net
 astaobao.com
@@ -12236,6 +12236,7 @@ azp315.com
 azpdl.com
 azpdl.net
 azsjhf.com
+zzznkq.com
 zzzlsh.com
 zzzla.com
 zzzl88.com
@@ -13733,6 +13734,8 @@ besttrav.com
 bestugali.com
 bestv6.com
 bestvapp.com
+bestvcdn.com
+bestvcdn.net
 bestvideocloud.com
 bestviewstock.com
 bestvist.com
@@ -27260,7 +27263,7 @@ efficient.hk
 effirst.com
 effood.net
 efivestar.com
-efly.cc
+jty5188.com
 eflybird.com
 eflycloud.com
 eflydns.net
@@ -41766,6 +41769,7 @@ hzdjy.com
 hzdledu.com
 hzdlrj.com
 hzdq.com
+hzdtv.tv
 hzdx.com
 hzecsemir.com
 hzefjs.com
@@ -47549,12 +47553,12 @@ jtbtech.com
 jtcjd.com
 jtfcg.com
 jtfengtou.com
-0.zone
+jtggame.com
 jtgjg168.com
 jtgloble.com
 jtgzfw.com
 jthcsx.com
-jtimg.com
+0.zone
 jtj-kr.com
 jtjr99.com
 jtjycn.com
@@ -47569,16 +47573,16 @@ jtrhc.fun
 jtrobots.com
 jtsglawyers.com
 jtso.net
-ttyuyin.com
-nelson-textiles.com
-antforecast.com
+jtsp98.com
+jttv.net
+jttzsy.com
 jtuzdhc.com
 jtv123.com
 jtwmall.com
 jtxys8.com
-jty5188.com
-jtyjy.com
-jtyxh.com
+efly.cc
+007shoes.com
+youcheqp.com
 ju-jingyi.com
 ju1212.com
 ju33.com
@@ -58352,7 +58356,7 @@ neituixiaowangzi.com
 neko.pub
 nelkshuhe.com
 nellit.net
-jttv.net
+nelson-textiles.com
 nelumbosp.com
 nengapp.com
 nenggeimall.com
@@ -63915,6 +63919,7 @@ qingnianlvxing.com
 qingnianwang.com
 qingpanduola.com
 qingpin.vip
+qingping.co
 qingqikeji.com
 qingqin.com
 qingqingmedia.com
@@ -68645,6 +68650,7 @@ sharedaka.com
 sharegog.com
 shareinstall.com
 shareinstall.net
+shareintelli.com
 sharejs.com
 sharelogis.com
 sharemoon.club
@@ -69389,7 +69395,7 @@ shopeesz.com
 shopex123.com
 shopin.net
 shopj.net
-shopjyh.com
+jtyjy.com
 shoplazza.com
 shopmaxmb.com
 shopnc.net
@@ -71088,7 +71094,7 @@ sohuiw.com
 sohunjug.com
 sohuns.com
 sohusce.com
-007shoes.com
+sohuu.com
 soicp.com
 sojex.net
 sojiang.com
@@ -71814,6 +71820,7 @@ startos.org
 startup-partner.com
 starwarschina.com
 starway.net
+starworldgames.com
 starx-w.com
 starxiiient.com
 starxn.com
@@ -76322,7 +76329,7 @@ ttymq.com
 ttyongche.com
 ttyqm.com
 ttysq.com
-jtsp98.com
+ttyuyin.com
 ttyyuuoo.com
 ttz.com
 ttzubao.com
@@ -82485,6 +82492,7 @@ wzswsq.com
 wzsxj.net
 wztf121.com
 wztlink1013.com
+wztsy.com
 wzty.ltd
 wzu.com
 wzweisen.com
@@ -83599,15 +83607,25 @@ xiaomi.hk
 xiaomi.net
 xiaomi.tw
 xiaomiaozai.com
+xiaomicp.com
+xiaomidns.com
+xiaomidns.net
 xiaomiev.com
 xiaomiflash.com
+xiaomiinc.com
+xiaomiinc.net
 xiaomimobile.com
 xiaominet.com
 xiaominfo.com
 xiaomingtaiji.com
+xiaominr.com
+xiaomiprint.com
 xiaomiqiu.com
 xiaomiquan.com
 xiaomirom.com
+xiaomisa.com
+xiaomisa.net
+xiaomisa.org
 xiaomishu.com
 xiaomiwear.com
 xiaomixiaoai.com
@@ -88728,7 +88746,7 @@ youche.com
 youchedi.com
 youchejiuxing.com
 youchent.com
-youcheqp.com
+jtyxh.com
 youcheyihou.com
 youchuhuodong.com
 youcloud.com
@@ -94542,8 +94560,8 @@ larksuite.com.ttdns2.com
 bj1.api.bing.com
 wscont2.apps.microsoft.com
 wscont1.apps.microsoft.com
-2-01-5830-0005.cdx.cedexis.net
 vulcan.dl.playstation.net
+2-01-5830-0005.cdx.cedexis.net
 gsp11-cn.ls.apple.com
 gsp12-cn.ls.apple.com
 st.dl.pinyuncloud.com
@@ -94602,9 +94620,9 @@ surface.download.prss.microsoft.com
 vlportal.download.prss.microsoft.com
 volic.download.prss.microsoft.com
 vscode.download.prss.microsoft.com
+dreamsparkuat.download.prss.microsoft.com
 vz.download.prss.microsoft.com
 windbg.download.prss.microsoft.com
-dreamsparkuat.download.prss.microsoft.com
 dl.delivery.mp.microsoft.com
 dreamspark.download.prss.microsoft.com
 gs2.ww.prod.dl.playstation.net
@@ -94645,5 +94663,6 @@ regexp:^images(-\d)?\.gog-statics\.com$
 regexp:^is[1-5](-ssl)?\.mzstatic\.com$
 regexp:^ntp([1-5])?\.tencent\.com$
 regexp:^ntp([1-7])?\.aliyun\.com$
+regexp:^r+[0-9]+(---|\.)sn-(2x3|ni5|j5o)\w{5}\.googlevideo\.com$
 regexp:^r+[0-9]+(---|\.)sn-(2x3|ni5|j5o)\w{5}\.xn--ngstr-lra8j\.com$
 regexp:^s[1-5]?\.mzstatic\.com$
