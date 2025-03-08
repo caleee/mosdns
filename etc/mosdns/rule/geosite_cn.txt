@@ -556,7 +556,7 @@ citic
 baidu
 alipay
 jtrobots.com
-flamecdn.com
+hanslaser.net
 007swz.com
 007szx.com
 00817.com
@@ -22363,7 +22363,7 @@ cudaojia.com
 cueber.com
 cuebzzy.com
 cuekit.com
-juandou.com
+cuelog.com
 cufeyk.com
 cugala.com
 cugstore.com
@@ -29663,7 +29663,7 @@ fl168.com
 fl365.com
 fl5.co
 fl580.com
-juanbao.com
+flamecdn.com
 flamesky.org
 flamingcold.com
 flan1688.com
@@ -30109,7 +30109,7 @@ freemindworld.com
 freemoban.com
 freemudgame.com
 freeoa.net
-freeqingnovel.com
+juanpi.com
 freeshoppingchina.com
 freessl.org
 freestman.com
@@ -36827,7 +36827,7 @@ hansetile.com
 hanshow.com
 hansight.com
 hansiji.com
-hanslaser.net
+juangua.com
 hansme.com
 hanspub.org
 hansrobot.com
@@ -41584,7 +41584,7 @@ hzbhjy.com
 hzbhsh.com
 hzbianqing.com
 hzbianqu.com
-jualjaket-id.com
+hzbike.com
 hzbk.net
 hzbohai.com
 hzbook.com
@@ -47421,11 +47421,11 @@ ju3x3so.com
 ju51.com
 ju81.cc
 juaiyou.com
-hzbike.com
+jualjaket-id.com
+juanbao.com
+zgshifu.com
 007shoes.com
-cuelog.com
-juangua.com
-juanpi.com
+freeqingnovel.com
 juanta.com
 juanyunkeji.com
 juanzan.com
@@ -64915,6 +64915,8 @@ qw5599.com
 qwbk.cc
 qweather.com
 qweather.net
+qwen.ai
+qwenlm.ai
 qwerhost.com
 qwfync.com
 qwgg.com
@@ -91060,7 +91062,7 @@ zgsd.net
 zgserver.com
 zgsglp.com
 zgshenglu.com
-zgshifu.com
+juandou.com
 zgshige.com
 zgshige.net
 zgshjj.com
