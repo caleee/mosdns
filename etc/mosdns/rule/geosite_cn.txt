@@ -118,6 +118,7 @@ full:crls.pki.goog
 full:csi.gstatic.com
 full:cstat.apple.com
 full:cstat.cdn-apple.com
+full:ctdsb.clouddiffuse.xyz
 full:ctldl.windowsupdate.com
 full:cueme-api.quark.cn
 full:customization-cdn.dell.com
@@ -630,8 +631,8 @@ cn
 citic
 baidu
 alipay
-jsxcra.com
-cgiumuo.xyz
+jsxbxcl.com
+chegva.com
 000868adh1.shop
 000868agl1.shop
 000868atz2.shop
@@ -13421,6 +13422,7 @@ anhuiry.com
 anhuisjx.com
 anhuisuya.com
 anhuiwine.com
+anhuiyun.com
 anhuizk.com
 ani-sh.com
 aniccw.net
@@ -18529,7 +18531,7 @@ blue-city.com
 blue-skylandscape.com
 blue-zero.com
 blue0123.com
-jsxmw.com
+blueaggrestore.com
 bluearchive-cn.com
 bluebeebox.com
 bluebellls.com
@@ -21966,7 +21968,7 @@ cghhospital.org
 cghospital.com
 cgicop.com
 cgiia.com
-jsxpbc.com
+cgiumuo.xyz
 cgjoy.com
 cgjoy.net
 cgke.com
@@ -22476,7 +22478,7 @@ cheetahmobile.com
 chefafa.com
 chefugao.com
 cheguo.com
-chegva.com
+jsxmw.com
 chehang168.com
 chehejia.com
 chehui.com
@@ -26689,7 +26691,7 @@ comdeep.com
 come-bio.com
 comebond.com
 comebt.com
-comefilm.com
+jsxlhb.com
 comeken.com
 comeorg.com
 comestuff.com
@@ -59542,8 +59544,8 @@ jswyglw.com
 jswyjt.com
 jswyw.com
 jswzjt.com
-jsxbxcl.com
 0.zone
+jsxcra.com
 jsxcx.com
 jsxdf.com
 jsxdyh.com
@@ -59563,10 +59565,10 @@ jsxihu.com
 jsxinfeng.com
 jsxinfly.com
 jsxionghuojxzz.com
-jsxlhb.com
-blueaggrestore.com
+comefilm.com
 00086.net
-xdnice.com
+zgfllt.com
+jsxq.com
 jsxtsw.com
 jsxxzh.com
 jsxy.biz
@@ -104039,7 +104041,7 @@ xdmssp.com
 xdn001.com
 xdn10000.com
 xdn2.com
-jsxq.com
+xdnice.com
 xdnote.com
 xdnphb.com
 xdnsvip.com
@@ -114091,7 +114093,7 @@ zgdydyxh.com
 zgdygf.com
 zgdztk.com
 zgeyanwo.com
-zgfllt.com
+jsxpbc.com
 zgfp.com
 zgfwgj.com
 zgfxnews.com
