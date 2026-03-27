@@ -292,6 +292,7 @@ full:is5.mzstatic.com
 full:itunes-apple.com.akadns.net
 full:itunes.apple.com
 full:itunesconnect.apple.com
+full:izattime.qcomgeo2.com
 full:js-cdn.music.apple.com
 full:km.support.apple.com
 full:ksn-cinfo-geo.kaspersky-labs.com
@@ -587,6 +588,7 @@ full:www.support.apple.com
 full:www4-static.gog-statics.com
 full:xn--flw351e.com
 full:xp.apple.com
+full:xtratime.qcomgeo2.com
 full:xz.pphimalayanrt.com
 alibaba
 xn--zfr164b
@@ -632,7 +634,7 @@ citic
 baidu
 alipay
 jsxbxcl.com
-chegva.com
+cgiia.com
 000868adh1.shop
 000868agl1.shop
 000868atz2.shop
@@ -18530,7 +18532,7 @@ bltzw.com
 blue-city.com
 blue-skylandscape.com
 blue-zero.com
-blue0123.com
+jsxlhb.com
 blueaggrestore.com
 bluearchive-cn.com
 bluebeebox.com
@@ -21967,7 +21969,7 @@ cggygs.com
 cghhospital.org
 cghospital.com
 cgicop.com
-cgiia.com
+jsxmw.com
 cgiumuo.xyz
 cgjoy.com
 cgjoy.net
@@ -22478,7 +22480,7 @@ cheetahmobile.com
 chefafa.com
 chefugao.com
 cheguo.com
-jsxmw.com
+chegva.com
 chehang168.com
 chehejia.com
 chehui.com
@@ -26691,7 +26693,7 @@ comdeep.com
 come-bio.com
 comebond.com
 comebt.com
-jsxlhb.com
+comefilm.com
 comeken.com
 comeorg.com
 comestuff.com
@@ -59565,9 +59567,9 @@ jsxihu.com
 jsxinfeng.com
 jsxinfly.com
 jsxionghuojxzz.com
-comefilm.com
+blue0123.com
 00086.net
-zgfllt.com
+xdnice.com
 jsxq.com
 jsxtsw.com
 jsxxzh.com
@@ -66406,7 +66408,6 @@ loushi.com
 lousj.com
 lousw.com
 louyue.com
-lovart.ai
 lovcuty.com
 love-freedom.com
 love-math-edu.com
@@ -104041,7 +104042,7 @@ xdmssp.com
 xdn001.com
 xdn10000.com
 xdn2.com
-xdnice.com
+jsxpbc.com
 xdnote.com
 xdnphb.com
 xdnsvip.com
@@ -114093,7 +114094,7 @@ zgdydyxh.com
 zgdygf.com
 zgdztk.com
 zgeyanwo.com
-jsxpbc.com
+zgfllt.com
 zgfp.com
 zgfwgj.com
 zgfxnews.com
