@@ -559,6 +559,7 @@ full:wip2.adobe.com
 full:wip3.adobe.com
 full:wip4.adobe.com
 full:wrds-www.wharton.upenn.edu
+full:ws.audioscrobbler.com
 full:wwis-dubc1-vip100.adobe.com
 full:wwis-dubc1-vip101.adobe.com
 full:wwis-dubc1-vip102.adobe.com
@@ -732,8 +733,8 @@ aws
 apple
 android
 amazon
-rinvdh7.xyz
-ibkr.ca
+rigums.xyz
+hautelook.com
 12vpn.com
 12vpn.net
 1337x.gd
@@ -3770,7 +3771,7 @@ beatsbydresstudio.com
 beatsbydrestorevip.com
 beatsbydrestudio-australia.com
 beatsbydrestudio.com
-beatsbydretoutlet.com
+jav01.cc
 beatsbydreuk.com
 beatsbydreuk.net
 beatsbydreus.com
@@ -5495,7 +5496,7 @@ yaya.cyou
 cash.app
 cash2.com
 cashback69.com
-jav168.cc
+cashbycashapp.com
 cashify.com
 cashify.net
 cashmart.jp
@@ -8358,6 +8359,7 @@ xvidios.xxx
 eskimotube.com
 eslite.com
 esm.run
+esm.sh
 esmarthealth.com
 esmatube.com
 esopworld.com
@@ -10907,7 +10909,7 @@ hashicorp.com
 haskell.org
 haskellstack.org
 hath.network
-hautelook.com
+jav101.com
 hautelookcdn.com
 haveibeenpwned.com
 hawaiibmw.com
@@ -11930,7 +11932,7 @@ ibb.co
 ibeats-uk.com
 ibeatsbydre.cc
 ibeatsbydre.com
-jav123.com
+ibkr.ca
 xenoblade.com
 xemales.com
 ibkr.com
@@ -12110,7 +12112,7 @@ igoshopping.net
 igotpornpics.com
 igpublish.com
 igsonar.com
-jav101.com
+igtv.com
 igvita.com
 ihsd-mp4.pics
 ihsdav.cc
@@ -13061,10 +13063,10 @@ jav.place
 jav.sb
 jav.si
 jav.wine
-jav01.cc
-igtv.com
+beatsbydretoutlet.com
 12joursdecadeauxdeitunes.com
-cashbycashapp.com
+pittpatt.com
+jav168.cc
 jav19.com
 jav223.com
 jav24.com
@@ -17900,7 +17902,7 @@ piratecams.com
 pirates-forum.org
 pirouvr.com
 pise.pw
-pittpatt.com
+jav123.com
 pivotalinitiative.com
 piwheels.org
 pixanalytics.com
@@ -17931,6 +17933,7 @@ pjbyj.top
 pjful-app.lol
 pjgirls.com
 wanderinghorse.net
+pkgbuild.com
 pki-post.ch
 pki-posta.ch
 pki-poste.ch
@@ -19208,10 +19211,10 @@ rhyw.me
 rhyw31.life
 ricefever.com
 ridepenguin.com
-rigums.xyz
+000webhost.com
 riku.me
 vredprofessional.com
-000webhost.com
+rinvdh7.xyz
 riot-games.com
 riot.com
 riot.im
