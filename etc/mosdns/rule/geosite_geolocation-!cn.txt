@@ -739,8 +739,8 @@ aws
 apple
 android
 amazon
-javopen.co
-atom.io
+javout.co
+custody.ru
 12vpn.com
 12vpn.net
 1337x.gd
@@ -1675,6 +1675,7 @@ agedm.tv
 agefans.com
 agemys.org
 agendaweek.com
+agentclientprotocol.com
 agilebits.com
 agnesb.fr
 agoogleaday.com
@@ -3022,7 +3023,7 @@ atlassian.com
 atlassian.net
 atnext.com
 atokara.jp
-javtrailers.com
+atom.io
 atomyze.ru
 atomyze.tech
 atos.net
@@ -6610,7 +6611,7 @@ curvybbwwives.com
 curvyerotic.com
 cusp.hk
 custhelp.com
-custody.ru
+javtrust.com
 custom-iphonecase.com
 custombeatsbydrebuy.com
 custombeatsdeals.com
@@ -6780,7 +6781,7 @@ dazndn.com
 daznfeeds.com
 daznplayer.com
 daznservices.com
-javtorrent.me
+db.tt
 dba.dk
 dbgjd.com
 dbo-dengi.online
@@ -13336,8 +13337,8 @@ javmost.xyz
 javmuch.com
 javmulu.net
 javnew.net
+javopen.co
 000webhost.com
-javout.co
 javplatform.com
 javpop.com
 javpop.link
@@ -13371,10 +13372,10 @@ javtag.net
 javtasty.com
 javteg.net
 javtiful.com
-db.tt
+javtorrent.me
+matters.news
 12joursdecadeauxdeitunes.com
-paypal-communications.com
-javtube.cc
+rgpub.io
 javtube.com
 javtube.net
 javvideoporn.com
@@ -14880,7 +14881,7 @@ matome-plus.com
 matome-plus.net
 matrix.org
 matrix.to
-matters.news
+javtrailers.com
 matters.one
 matters.town
 mattersprotocol.io
@@ -17765,7 +17766,7 @@ paypal-center.info
 paypal-center.net
 paypal-center.org
 paypal-communication.com
-javtrust.com
+paypal-communications.com
 paypal-communications.net
 paypal-community.com
 paypal-community.net
@@ -18227,6 +18228,7 @@ wearehairy.com
 placesdocs.com
 planetminecraft.com
 planetsuzy.org
+plannotator.ai
 plansondemand.com
 plantsvszombies2.com
 plasticlabs.com
@@ -19506,7 +19508,7 @@ rfa.org
 rferl.org
 rfi.fr
 rfi.my
-rgpub.io
+javtube.cc
 rhodeislandbmw.com
 rhyw.me
 rhyw31.life
@@ -22674,6 +22676,7 @@ volvobuses.com
 twistys.com
 twitch.tv
 twitchcdn.net
+twitchcon.com
 twitchsvc.net
 twitcomike.jp
 twitiq.com
