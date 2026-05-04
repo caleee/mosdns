@@ -740,8 +740,8 @@ aws
 apple
 android
 amazon
-javpop.com
-literotica.com
+javplatform.com
+nintendo.dk
 12vpn.com
 12vpn.net
 1337x.gd
@@ -7176,6 +7176,7 @@ digitalcertvalidation.com
 digitaldesire.com
 digitalhub.com
 digitalid.ch
+digitalocean-ui.com
 digitalocean.com
 digitaloceanspaces.com
 digitalpack.com
@@ -12112,7 +12113,7 @@ icloud.hu
 icloud.ie
 icloud.is
 icloud.jp
-icloud.lv
+javtube.com
 icloud.om
 icloud.org
 icloud.pt
@@ -13340,8 +13341,8 @@ javmulu.net
 javnew.net
 javopen.co
 javout.co
-javplatform.com
 000webhost.com
+javpop.com
 javpop.link
 javporn.tech
 javporn.ws
@@ -13375,10 +13376,10 @@ javteg.net
 javtiful.com
 javtorrent.me
 javtrailers.com
-javtrust.com
-uun86.com
+martau.com
 12joursdecadeauxdeitunes.com
-tubeislam.com
+icloud.lv
+javtube.net
 javvideoporn.com
 javvids.com
 javwide.com
@@ -14277,7 +14278,7 @@ listinganalytics.net
 litbus-anime.com
 litenews.hk
 literatumonline.com
-javtube.com
+literotica.com
 littleasians.com
 littlesexdolls.com
 litv.tv
@@ -14741,7 +14742,7 @@ markingmenus.com
 markzuckerberg.com
 marranazas.com
 marscode.com
-martau.com
+javtrust.com
 martsangkagyuofficial.org
 marvel.com
 marvel10thanniversary.com
@@ -16839,7 +16840,7 @@ nintendo.com
 whispersystems.org
 whisolutions.com
 nintendo.de
-nintendo.dk
+javtube.cc
 nintendo.es
 nintendo.eu
 nintendo.fi
@@ -22536,7 +22537,7 @@ tubeenema.com
 tubefuckme.net
 tubegalore.com
 tubegold.xxx
-javtube.net
+tubeislam.com
 tubelombia.net
 tubemature.tv
 tubemovies4k.com
@@ -22967,7 +22968,7 @@ uun79.com
 uun82.com
 uun83.com
 uun85.com
-javtube.cc
+uun86.com
 uun87.com
 uun89.com
 uun92.com
