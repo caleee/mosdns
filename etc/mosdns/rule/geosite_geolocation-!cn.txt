@@ -769,8 +769,8 @@ aws
 apple
 android
 amazon
-javopen.co
-rustore.ru
+javmulu.net
+rustdesk.com
 12vpn.com
 12vpn.net
 1337x.gd
@@ -6799,6 +6799,7 @@ dat.foundation
 data-tscbank.ru
 data-vocabulary.org
 data.com
+data18.com
 datacloudmy.com
 dataframeworks.com
 dataliberation.org
@@ -7709,7 +7710,7 @@ drunkenstepfather.com
 drunkentop.com
 drweb-av.de
 drweb-av.es
-javtrust.com
+drweb-av.it
 drweb-av.pl
 drweb.by
 drweb.cn
@@ -7733,6 +7734,7 @@ dssott.com
 dstk.dk
 dswz88.xyz
 dsyiren.com
+dt18.com
 dtci.co
 dtci.technology
 dtiblog.com
@@ -9051,7 +9053,7 @@ farfetch.net
 faronics.ca
 xx9.app
 faronics.com
-javtrailers.com
+xx-map.com
 xwbo.com
 faronics.eu
 faronics.tech
@@ -9994,7 +9996,7 @@ gamepedia.com
 xtegvk.xyz
 xtapes.to
 gameroom.com
-javtorrent.me
+gamerotic.com
 gamesathletes.com
 gamescup.ru
 gamesfirsthelsinki.com
@@ -10124,7 +10126,7 @@ geek-squad.org
 geek-squads.net
 geeksquad.ca
 geeksquad.cc
-geeksquad.com
+javteg.net
 geeksquad.net
 geeksquad.tv
 geeksquadcares.com
@@ -10249,6 +10251,7 @@ gettyimages.se
 gettyimages.us
 getuploader.com
 getws1.com
+getwsj.com
 getwsone.com
 getzola.org
 gfacecbook.com
@@ -13381,6 +13384,7 @@ javdoe.to
 javdove.com
 javdove8.xyz
 javextreme.net
+javfc2.xyz
 javfilms.com
 javfinder.ai
 javfor.me
@@ -13432,9 +13436,9 @@ javmost.com
 javmost.cx
 javmost.xyz
 javmuch.com
-javmulu.net
-javnew.net
 000webhost.com
+javnew.net
+javopen.co
 javout.co
 javplatform.com
 javpop.com
@@ -13467,11 +13471,11 @@ javstore.net
 javsx.com
 javtag.net
 javtasty.com
-javteg.net
-javtiful.com
-gamerotic.com
-xx-map.com
-drweb-av.it
+geeksquad.com
+psb-ocenka.ru
+mediafiles-cisco.com
+javtrailers.com
+javtrust.com
 javtube.cc
 javtube.com
 javtube.net
@@ -15117,7 +15121,7 @@ media-imdb.com
 wistia.com
 mediachinese.com
 mediaclip.jp
-mediafiles-cisco.com
+javtorrent.me
 mediafreakcity.com
 mediamatters.org
 mediasama.com
@@ -19053,7 +19057,7 @@ proyectoclubes.com
 prpops.com
 prts.plus
 ps-exchange.com
-psb-ocenka.ru
+javtiful.com
 psb.ru
 psbank.ru
 pscdn.co
@@ -19819,8 +19823,8 @@ russiandesigncup.ru
 russianrape.org
 russoutdoor.ru
 rust-lang.org
-rustdesk.com
 12joursdecadeauxdeitunes.com
+rustore.ru
 rustore.team
 rustore.tv
 rustup.rs
